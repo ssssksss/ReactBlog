@@ -1,7 +1,4 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border;
+    margin: 0;
 }
-
-nav { height: 160px; }
-nav > #nav1_container { height: 100px; background: red; }
-nav > #nav2_container { height: 160px; }

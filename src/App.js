@@ -1,14 +1,14 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import { Component } from 'react';
-import Test from "./components/test";
+//import 클래스컴포넌트 from "클래스컴포넌트의 경로"
+import Nav1 from "./components/Nav1"; 
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <header> 
-        <Test title="test1" sub="hahaha" > </Test>
-        <Test title="test3" sub="ababab" > </Test>
+        <Nav1 title="test1" sub="hahaha" > </Nav1>
       </header>
     );
   }
