@@ -1,17 +1,22 @@
-// import logo from './logo.svg';
-import { Component } from 'react';
-//import 클래스컴포넌트 from "클래스컴포넌트의 경로"
-import Nav1 from "./components/Nav1"; 
+import React, { useState,useEffect } from 'react';
+import Nav from './components/Nav.js';
+import './components/Nav.css';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component{
+
   render() {
     return (
-      <header> 
-        <Nav1 title="test1" sub="hahaha" > </Nav1>
-      </header>
+      <React.Fragment>
+        <Nav> </Nav>
+      </React.Fragment>
     );
   }
 }
 
 export default App;
+
+
+
+
+
