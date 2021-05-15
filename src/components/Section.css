@@ -1,0 +1,29 @@
+.section_container {
+  width: 1400px;
+  height: 680px;
+  margin: auto;
+}
+
+.postarea_container {
+  width: 680px;
+  height: 680px;
+  margin: auto;
+  background: rgba(255, 234, 167, 0.8);
+  opacity: 0.5;
+  display: inline-block;
+  margin: auto 40px 40px;
+}
+.lefaside_container {
+  width: 320px;
+  height: 680px;
+  background: rgba(255, 234, 167, 0.8);
+  opacity: 0.5;
+  display: inline-block;
+}
+.rightaside_container {
+  width: 320px;
+  height: 680px;
+  background: rgba(255, 234, 167, 0.8);
+  opacity: 0.5;
+  display: inline-block;
+}

@@ -1,8 +1,14 @@
 import React, { useState,useEffect } from 'react';
 import {CSSTransition } from 'react-transition-group';
 import './Nav.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-function Nav() {
+const Nav = (props) => {
 
     return(
         <nav> 
@@ -14,7 +20,10 @@ function Nav() {
                   <span></span>
                 </label>
                 <div className="side_menu_container">
-                    <Sidemenulist>
+                    <Sidemenulist onChangePage={()=>{
+                      console.log("여기까지도 반응이 온다.");
+                        props.onChangePage();
+                    }} >
                     </Sidemenulist>
                 </div>
             </div>
@@ -24,7 +33,11 @@ function Nav() {
   
   function Sidemenulist(props) {
     const [activeMenu,setActiveMenu] = useState('main');
-  
+    
+    function test() {
+      props.onChangePage();
+    };
+
     function Sidemenu(props) {
       return(
         <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
@@ -179,6 +192,16 @@ function Nav() {
               onEnter={()=>setActiveMenu('html')}>
               <div className="menu menu3">
                 <Sidemenu goToMenu="frontendmenu"> HTML </Sidemenu>
+                <ul>
+                  <li><a href="#" onClick={()=>
+                    {test()}
+                  }>HTML1</a></li>
+                  <li><a href="#">HTML2</a></li>
+                  <li><a href="#">HTML3</a></li>
+                  <li><a href="#">HTML4</a></li>
+                </ul>
+
+
                 {/* <Sidemenu goToMenu="">  </Sidemenu> */}
               </div>
           </CSSTransition>

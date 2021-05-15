@@ -1,22 +1,35 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import Nav from './components/Nav.js';
-import './components/Nav.css';
+import Section from './components/Section.js';
+import { Link } from 'react-router-dom';
+import './components/Footer.css';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-class App extends React.Component{
+const App = () => {
+    const [whatPage,setWhatPage] = useState('main');
 
-  render() {
     return (
       <React.Fragment>
-        <Nav> </Nav>
+          <Nav onChangePage={()=>{
+            console.log("여기는 Nav페이지 이다")
+            setWhatPage('html1');
+          }}> </Nav>
+        <Section> </Section>
+        <Footer> </Footer>
       </React.Fragment>
     );
-  }
 }
 
 export default App;
 
-
+const Footer = (props) => {
+  return (
+    <footer class="footer_container">
+      바닥
+    </footer>
+  );
+}
 
 
 
