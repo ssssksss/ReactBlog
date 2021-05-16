@@ -9,18 +9,21 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 const App = () => {
     const [whatPage,setWhatPage] = useState('main');
 
+    const changePage = (page,e) => {
+      // e.preventDefault();
+      setWhatPage(page);
+    }
+
     return (
       <React.Fragment>
-          <Nav onChangePage={()=>{
-            console.log("여기는 Nav페이지 이다")
-            setWhatPage('html1');
-          }}> </Nav>
-        <Section> </Section>
+        <Nav onChangePage={(page)=>{
+          {changePage(page)}
+        }}> </Nav>
+        <Section page={whatPage}> </Section>;
         <Footer> </Footer>
       </React.Fragment>
     );
 }
-
 export default App;
 
 const Footer = (props) => {
@@ -30,6 +33,3 @@ const Footer = (props) => {
     </footer>
   );
 }
-
-
-

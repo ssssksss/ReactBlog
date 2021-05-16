@@ -20,9 +20,9 @@ const Nav = (props) => {
                   <span></span>
                 </label>
                 <div className="side_menu_container">
-                    <Sidemenulist onChangePage={()=>{
+                    <Sidemenulist onChangePage={(page)=>{
                       console.log("여기까지도 반응이 온다.");
-                        props.onChangePage();
+                        props.onChangePage(page);
                     }} >
                     </Sidemenulist>
                 </div>
@@ -34,8 +34,8 @@ const Nav = (props) => {
   function Sidemenulist(props) {
     const [activeMenu,setActiveMenu] = useState('main');
     
-    function test() {
-      props.onChangePage();
+    function send(page) {
+      props.onChangePage(page);
     };
 
     function Sidemenu(props) {
@@ -60,9 +60,8 @@ const Nav = (props) => {
               unmountOnExit
               onEnter={()=>setActiveMenu('main')}>
               <div className="menu menu1">
-                <Sidemenu> 메인 메뉴 </Sidemenu>
+                <Sidemenu> <a onClick={()=>{ send('main'); }}> 메인 메뉴 </a> </Sidemenu>
                 <Sidemenu goToMenu="frontendmenu"> 프론트엔드  </Sidemenu>
-                <Sidemenu goToMenu="backendmenu"> 백엔드 </Sidemenu>
                 <Sidemenu goToMenu="designmenu"> 디자인 </Sidemenu>
                 <Sidemenu goToMenu="networkmenu">네트워크 및 시스템  </Sidemenu>
                 <Sidemenu goToMenu="effcodemenu"> 효율적인코드작성 </Sidemenu>
@@ -71,7 +70,7 @@ const Nav = (props) => {
               </div>
           </CSSTransition>
   
-          {/* 두번째 메뉴 */}
+          {/* 두번째 메뉴  ========================================================= */}
   
           <CSSTransition             
               in={activeMenu === 'frontendmenu'}
@@ -183,7 +182,8 @@ const Nav = (props) => {
               </div>
           </CSSTransition>
   
-          {/* 세번째 메뉴 - 프론트 엔드 */}
+          {/* 세번째 메뉴 - 프론트 엔드 ========================================================= */}
+
           <CSSTransition             
               in={activeMenu === 'html'}
               timeout={500}
@@ -194,11 +194,18 @@ const Nav = (props) => {
                 <Sidemenu goToMenu="frontendmenu"> HTML </Sidemenu>
                 <ul>
                   <li><a href="#" onClick={()=>
-                    {test()}
+                    {send('html1')}
                   }>HTML1</a></li>
-                  <li><a href="#">HTML2</a></li>
-                  <li><a href="#">HTML3</a></li>
-                  <li><a href="#">HTML4</a></li>
+                  <li><a href="#" onClick={()=>
+                    {send('html2')}
+                  }>HTML2</a></li>
+                  <li><a href="#" onClick={()=>
+                    {send('html3')}
+                  }>HTML3</a></li>
+                  <li><a href="#" onClick={()=>
+                    {send('html4')}
+                  }>HTML4</a></li>
+                  
                 </ul>
 
 

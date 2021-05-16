@@ -1,29 +1,41 @@
 .section_container {
   width: 1400px;
-  height: 680px;
   margin: auto;
+  margin-top: 20px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+/* font-family: "Do Hyeon", sans-serif; */
+
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+/* font-family: 'Do Hyeon', sans-serif; */
+
+.area_container {
+  display: inline-block;
+  background: rgba(43, 174, 102);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 5px;
+  min-height: 50px;
+  color: white;
+  /* font-family: "Do Hyeon", sans-serif; */
+  /* font-family: "Do Hyeon", sans-serif; */
 }
 
 .postarea_container {
   width: 680px;
-  height: 680px;
   margin: auto;
-  background: rgba(255, 234, 167, 0.8);
-  opacity: 0.5;
-  display: inline-block;
+  /* background: rgba(255, 234, 167, 0.8); */
   margin: auto 40px 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .lefaside_container {
   width: 320px;
-  height: 680px;
-  background: rgba(255, 234, 167, 0.8);
-  opacity: 0.5;
-  display: inline-block;
+  /* background: rgba(255, 234, 167, 0.8); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .rightaside_container {
   width: 320px;
-  height: 680px;
-  background: rgba(255, 234, 167, 0.8);
-  opacity: 0.5;
-  display: inline-block;
+  /* background: rgba(255, 234, 167, 0.8); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
