@@ -5,39 +5,40 @@ import Page from './page.js';
 const Section = (props) => {
     const [changePage,setChangePage] = useState('main');
 
+    // Sidemenulist에서 목록을 누르면 section구간에 페이지를 랜더링 해줌
     useEffect( ()=> {
       console.log("새로운 페이지 렌더링");
       setChangePage(props.page);
     },[props.page])
 
     return (
-      <div class="section_container">
+      <ul class="section_container">
             <LeftAside> </LeftAside>
             <PostArea page={changePage}> </PostArea>
             <RightAside> </RightAside>
-      </div>
+      </ul>
+    );
+  }
+
+  const LeftAside = (props) => {
+    return (
+      <li className="leftaside_container area_container">
+        왼쪽 사이드 영역
+      </li>
     );
   }
   const PostArea = (props) => {
     return (
-      <div className="postarea_container area_container">
+      <li className="postarea_container area_container">
           <Page page={props.page}> </Page>
-      </div>
-    );
-  }
-  const LeftAside = (props) => {
-    return (
-      <aside className="lefaside_container area_container">
-        왼쪽 사이드 영역
-      </aside>
+      </li>
     );
   }
   const RightAside = (props) => {
     return (
-      <aside className="rightaside_container area_container">
+      <li className="rightaside_container area_container">
         오른쪽 사이드 영역
-      </aside>
+      </li>
     );
   }
-
 export default Section;

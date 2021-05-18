@@ -1,41 +1,31 @@
 .section_container {
+  padding: 0px;
   width: 1400px;
   margin: auto;
-  margin-top: 20px;
+  background: linear-gradient(rgb(222, 238, 205), rgba(218, 205, 238, 0.6));
+  display: flex;
+  justify-content: space-around;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
-/* font-family: "Do Hyeon", sans-serif; */
-
-@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
-/* font-family: 'Do Hyeon', sans-serif; */
-
 .area_container {
-  display: inline-block;
   background: rgba(43, 174, 102);
   border-radius: 5px;
   box-sizing: border-box;
   padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   min-height: 50px;
   color: white;
-  /* font-family: "Do Hyeon", sans-serif; */
-  /* font-family: "Do Hyeon", sans-serif; */
 }
 
-.postarea_container {
-  width: 680px;
-  margin: auto;
-  /* background: rgba(255, 234, 167, 0.8); */
-  margin: auto 40px 40px;
+.leftaside_container {
+  width: 320px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.lefaside_container {
-  width: 320px;
-  /* background: rgba(255, 234, 167, 0.8); */
+.postarea_container {
+  width: 680px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .rightaside_container {
   width: 320px;
-  /* background: rgba(255, 234, 167, 0.8); */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
