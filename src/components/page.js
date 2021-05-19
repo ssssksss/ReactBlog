@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from 'react';
+import ImageSlider from './ImageSlider.js';
 import { Redirect } from 'react-router';
 import './page.css';
 
@@ -18,6 +19,10 @@ const Page = (props) => {
             return(<Jsp1></Jsp1>);
         case 'jsp2': //jsp - apachetomcat - oracledb
             return(<Jsp2></Jsp2>);
+        case 'network1': //network
+            return(<Network1></Network1>);
+        case 'design1': //network
+            return(<Design1></Design1>);
         default:
             return(<></>);
     }
@@ -69,20 +74,7 @@ const Text = (props) => {
     );
 }
 
-// arr=['파일명(/img/jsp3_)', '장면수', '확장자(.png)']
-const ImageSlider = (props) => {
-   var [pageNum,setPageNum] = useState(1);
-   return (
-       <div className="img_container">
-           <button className ="left_arrow_button arrow_button" onClick={()=> {
-               if(pageNum>1) { setPageNum(parseInt(pageNum)-1); }}}>  &lt; </button>
-           <img className="img_" src={process.env.PUBLIC_URL + props.image[0] + pageNum +props.image[2]}/>
-           <button className ="right_arrow_button arrow_button" onClick={()=> {
-               if(pageNum<props.image[1]) {setPageNum(parseInt(pageNum)+1);}}}> &gt; </button>
-           <div className="showpagenum"> {pageNum} / {props.image[1]} </div>
-       </div>
-   );   
-}
+
 
 
 //페이지들을 모아놓은 태그 
@@ -200,6 +192,9 @@ const Jsp1 = () => {
             미들웨어 2개로 나뉘게 되었다. 이 때 동적데이터를 처리하는 서버를 WAS라 부르고 아파치톰캣이 이와 같은 역할을 하는 것이다. </p>
             <p>(5) 과거에는 WAS는 정적인 데이터를 처리하는 웹서버 역할을 하지 않았지만 지금은 WAS가 처리는 가능하지만
             웹서버와 동시에 운영을 한다(WAS에 문제가 발생하여도 안정적인 서버운영이 가능하기 떄문) </p>
+            <p>(6) Servlet은 자바기반으로 WAS에서 작동한다. 하지만 Servlet은 HTML 코드와 함께 작성하려면 코드작성이 불편하다
+                그러므로 좀더 쉽게 코드를 작성하기 위해 JSP가 만들어졌다.</p>
+            <p>(7) 클라이언트가 JSP로 요청을 하면 Servlet코드로 변경이되고(아파치톰캣의 역할) 처리결과를 HTML파일로 클라이언트에게 제공한다.</p>
 
             <Article stitle="2) JSP 이클립스에서 설정하기" content="JSP사용하기 위한 다운로드"/>
             <WordDescV1 desc="
@@ -286,6 +281,9 @@ const Jsp2 = () => {
                     미들웨어 2개로 나뉘게 되었다. 이 때 동적데이터를 처리하는 서버를 WAS라 부르고 아파치톰캣이 이와 같은 역할을 하는 것이다. </p>
                 <p>(5) 과거에는 WAS는 정적인 데이터를 처리하는 웹서버 역할을 하지 않았지만 지금은 WAS가 처리는 가능하지만
                     웹서버와 동시에 운영을 한다(WAS에 문제가 발생하여도 안정적인 서버운영이 가능하기 떄문) </p>
+                <p>(6) Servlet은 자바기반으로 WAS에서 작동한다. 하지만 Servlet은 HTML 코드와 함께 작성하려면 코드작성이 불편하다
+                그러므로 좀더 쉽게 코드를 작성하기 위해 JSP가 만들어졌다.</p>
+                <p>(7) 클라이언트가 JSP로 요청을 하면 Servlet코드로 변경이되고(아파치톰캣의 역할) 처리결과를 HTML파일로 클라이언트에게 제공한다.</p>
 
             <Article stitle="2) JSP 이클립스에서 설정하기" content="JSP사용하기 위한 다운로드"/>
             <WordDescV1 desc="
@@ -305,17 +303,18 @@ const Jsp2 = () => {
             <WordDescV1 desc="OracleDB을 사용하기 위해 OracleDB을 설치하고 연동하는 과정"
             example="package day2;
 
+            import java.sql.Connection;
+            import java.sql.DriverManager;
+            
             public class Test2 {
                 public static void main(String[] args) {
-                    String DBdriver = &quot;oracle.jdbc.driver.OracleDriver&quot;;
                     String url = &quot;jdbc:oracle:thin:@localhost:1521:xe&quot;;
-                    String user = &quot;c##coin666&quot;
+                    String user =&quot;system&quot;;
                     String password = &quot;1234&quot;;
                     Connection conn = null;
-                    
                     try {
-                        Class.forName(DBdriver);
-                        conn = DriverManager.getConnection(url, user, password);
+                        Class.forName(&quot;oracle.jdbc.driver.OracleDriver&quot;);
+                        conn = DriverManager.getConnection(url,user,password);
                         conn.close();
                         System.out.println(&quot;확인&quot;);
                     } catch (Exception e) {
@@ -323,30 +322,163 @@ const Jsp2 = () => {
                     }
                 }
             }
-            }"> </WordDescV1> <br/><p>✔ 위코드를 복사하고 Ctrl+Shift+F 를 하면 이클립스에서 코드가 정리됩니다.</p>
-            <p>✔ 기본 포트번호가 1521이므로 OracleDB Developer 홈에서 각자 포트번호 한번 보시기 바랍니다. </p>
-            <p>✔ cmd창 ➡ mysql -u root -p1234 ➡ show databases 입력, 만들어둔 sqltestdb 확인 ➡
-                use sqltestdb ➡ show tables; 입력, 테이블 확인하는 방법 ➡ select * from test; 입력, 테이블의
-                레코드를 보는 sql문 ➡ exit 입력 혹은 그냥 종료해도 상관없음  </p>
-            <a href="" target='blank'> 👀 OracleDB 다운로드 전체 </a> <br/>
-            <a href="" target='blank'> 👀 OracleDB Community Downloads MSI Installer</a>  <br/>
-            <a href="" target='blank'> 👀 OracleDB Connector NET </a>  <br/>
-            <ImageSlider image={arr=['/img/jsp2_4_','27','.png']}> </ImageSlider>
+            }"> </WordDescV1> <br/> 
+            <Text text="예제코드2 : package day2;
 
-            <Article stitle="5) 개념공부) 브라우저, 클라이언트, 서버" 
+                import java.sql.Connection;
+                import java.sql.DriverManager;
+                import java.sql.ResultSet;
+                import java.sql.Statement;
+
+                public class Test2 {
+                    public static void main(String[] args) {
+                        String url = &quot;jdbc:oracle:thin:@localhost:1521:xe&quot;;
+                        String user =&quot;c##사용자명&quot;;
+                        String password = &quot;1234&quot;;
+                        Connection conn = null;
+                        try {
+                            Class.forName(&quot;oracle.jdbc.driver.OracleDriver&quot;);
+                            String sql = &quot;SELECT * FROM testtable&quot;;
+                            conn = DriverManager.getConnection(url,user,password);
+                            Statement st = conn.createStatement();
+                            ResultSet rs = st.executeQuery(sql);
+                            while(rs.next()) {
+                                System.out.println(rs.getString(1));
+                            }
+                            conn.close();
+                            st.close();
+                            rs.close();
+                            System.out.println(&quot;확인&quot;);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }"> </Text>
+            
+            
+            
+            <br/><p>✔ 위코드를 복사하고 Ctrl+Shift+F 를 하면 이클립스에서 코드가 정리됩니다.</p>
+            <p>✔ 기본 포트번호가 1521/xe </p>
+            <p>✔ OracleDB를 설치하고 나서 아래 코드를 입력하여 테이블을 생성 </p>
+            <p>cmd창 ➡ sqlplus system/1234 ➡  CREATE user c##유저이름 identified by 비밀번호; </p>
+            <p>➡ GRANT connect,resource,create view,create procedure,dba,create any table to c##유저이름; 
+            <p>➡  conn c##사용자명/비밀번호; ➡ create table testtable(num number); </p>
+            ➡ insert into testtable values(1); <br/> 
+            ➡ insert into testtable values(2); <br/> 
+            ➡ insert into testtable values(3); <br/> 
+            ➡ select * from testtable; 입력, 테이블의 레코드를 보는 sql문 <br/> 
+            ➡ exit 입력 혹은 그냥 종료해도 상관없음  </p> <br/> 
+            <a href="https://www.oracle.com/database/technologies/xe-downloads.html" target='blank'> 👀 OracleXE(필수) </a>  <br/>
+            <a href="https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html" target='blank'> 👀 OracleDB JDBC 드라이버(필수) </a>  <br/>
+            <a href="https://www.oracle.com/tools/downloads/sqldev-downloads.html" target='blank'> 👀 OracleDB Developer </a>  <br/>
+            <ImageSlider image={arr=['/img/jsp2_4_','20','.png']}> </ImageSlider> <br/><br/><br/>
+
+            
+
+            <Article stitle="5) JSP 사용하기 " 
             content="브라우저, 클라이언트, 서버?"/>
-            <p> 브라우저는 크롬,사파리,인터넷익스플로러 등 사용자가 웹페이지를 볼 수 있는 환경</p>
-            <p> 클라이언트는 브라우저,인터넷 등을 사용하는 사용자 </p>
-            <p> 서버는 클라이언트에게 저장된 리소스나 서비스를 제공하는 주체(회사)이다.</p>
-            <p style={{background: 'red'}}>  </p>
-
-            <p style={{background: 'red'}}>  </p>
-            <Article stitle="1) JSP" content="JSP란?"/>
+            <p> </p>
+            
+            
+            <Article stitle="6) " content="?"/>
             <WordDescV1 desc=""
-            example="< style={{background: 'red'}}>  </>"> </WordDescV1>
-            <p style={{background: 'red'}}>  </p>
+            example=""> </WordDescV1>
+
+            
+            <Article stitle="6) " content="?"/>
+            <WordDescV1 desc=""
+            example=""> </WordDescV1>
+
+            <Article stitle="6) " content="?"/> 
+            <WordDescV1 desc=""
+            example=""> </WordDescV1>
                         
         </div>
     );
 }
 
+//Newwork
+const Network1 = () => {
+    var arr = [];
+
+    return(
+        <div>
+            <Title div="1. Network 기초"> <a name="top"> </a></Title>
+
+            <Article stitle="1) Protocol" content="Protocol 이란?"/>
+            <Text text="데이터를 전송하는 통신 규약, 어떻게 데이터를 전송을 할지
+            전 세계적으로 정해놓아서 통일된 약속이다. 예를 들어 우리가 택배를 보내는데
+            보내는 사람, 받는 사람, 받는 주소를 적어야 하는 것처럼 프로토콜을 여러개의 계층, 패킷으로
+            이루어져있다."
+            example=""> </Text>
+
+            
+            <Article stitle="2) OSI 7 Layer" content="OSI 7 layer?"/>
+            <Text text="통신하는데 보내는 프로토콜을 7단계로 나누어 표현을 한 방식"> </Text>
+            <Text text="1~7계층 까지 물리-데이터링크-네트워크-전송-세션-표현-응용 
+            이렇게 7가지 정도로 나뉘어진다."> </Text>
+            <p>1계층 : 이진화된 데이터 </p>
+            <p>2계층 : MAC 주소 (IP주소 보다 좀 더 자세한 주소) </p>
+            <p>3계층 : IP 주소 </p>
+            <p>4계층 : 데이터 흐름 (TCP/IP , UDP) </p>
+            <p>5계층 : 동기화 </p>
+            <p>6계층 : 암호화 - 복호화 </p>
+            <p>7계층 : 데이터를 해석해주는 프로그램 </p>
+
+            <Article stitle="3) OSI 7 Layer 1계층 " content="?"/>
+            <Text text=""> </Text>
+
+            <Article stitle="4) OSI 7 Layer 2계층" content="?"/>
+            <Text text=""> </Text>
+
+            <Article stitle="5) OSI 7 Layer 3계층" content="?"/>
+            <p>IP주소를 가지고 있는 계층으로 IPv4를 일반적으로 사용하지만전세계 IP주소가 부족하여 IPv6를 사용하려 한다. </p>
+            <p>하지만 IPv6로 사용을 하려면 모든 기존 기기를 바꿔야 하는 단점이 있다. </p>
+            <p>그래서 IP주소의 부족으로 개선된 방법중에 사설IP와 공인IP라는 개념이 있다. </p>
+            <p>라우터, 공유기 등등 설명추가 </p>
+
+            <Article stitle="6) OSI 7 Layer 4계층" content="?"/>
+            <p> </p>
+
+            <Article stitle="7) OSI 7 Layer 5계층" content="?"/>
+            <p> </p>
+
+            <Article stitle="8) OSI 7 Layer 6계층" content="?"/>
+            <p> </p>
+
+            <Article stitle="9) OSI 7 Layer 7계층" content="?"/>
+            <p> </p>
+
+            <Article stitle="10) " content="?"/>
+            <p> DNS , URL , 네트워크 , 웹, 인터넷, 서버, 프로토콜, </p>
+            <p> GET , POST </p>
+            
+        </div>
+    );
+}
+
+//디자인 - Figma
+const Design1 = () => {
+    var arr = [];
+
+    return(
+        <div>
+            <Title div="1. Figma"> <a name="top"> </a></Title>
+
+            <Article stitle="6) " content="?"/>
+            <WordDescV1 desc=""
+            example=""> </WordDescV1>
+
+            
+            <Article stitle="6) " content="?"/>
+            <WordDescV1 desc=""
+            example=""> </WordDescV1>
+
+            <Article stitle="6) " content="?"/> 
+            <WordDescV1 desc=""
+            example=""> </WordDescV1>
+                        
+        </div>
+    );
+}

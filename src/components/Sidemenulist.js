@@ -339,6 +339,39 @@ function Sidemenu(props) {
             </div>
         </CSSTransition>
         
+        {/* 세번째 메뉴 - 디자인 ========================================================= */}
+        <CSSTransition             
+            in={activeMenu === 'design'}
+            timeout={500}
+            classNames="menu-third"
+            unmountOnExit
+            onEnter={()=>setActiveMenu('design')}>
+
+            <div className="menu menu3">
+              <Sidemenu goToMenu="backendmenu"> Network </Sidemenu>
+                <Sidemenu> <a href="#" onClick={()=>{send('design1')}}>Figma 👉</a>  </Sidemenu>
+                {/* <Sidemenu> <a href="#" onClick={()=>{send('jsp2')}}>JSP2</a>  </Sidemenu> */}
+            </div>
+        </CSSTransition>
+
+        
+        {/* 세번째 메뉴 - 네트워크 및 시스템 ========================================================= */}
+        <CSSTransition             
+            in={activeMenu === 'server'}
+            timeout={500}
+            classNames="menu-third"
+            unmountOnExit
+            onEnter={()=>setActiveMenu('server')}>
+
+            <div className="menu menu3">
+              <Sidemenu goToMenu="backendmenu"> Network </Sidemenu>
+                <Sidemenu> <a href="#" onClick={()=>{send('network1')}}>Network 이론👉</a>  </Sidemenu>
+                {/* <Sidemenu> <a href="#" onClick={()=>{send('jsp2')}}>JSP2</a>  </Sidemenu> */}
+            </div>
+        </CSSTransition>
+        
+        {/* 세번째 메뉴 - 프론트 엔드 ========================================================= */}
+        {/* 세번째 메뉴 - 프론트 엔드 ========================================================= */}
         {/* 세번째 메뉴 - 프론트 엔드 ========================================================= */}
         {/* 세번째 메뉴 - 프론트 엔드 ========================================================= */}
         
