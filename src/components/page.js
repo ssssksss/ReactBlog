@@ -297,6 +297,7 @@ const Jsp2 = () => {
             example="아파치 톰캣이 실행되기까지 테스트"> </WordDescV1>
             <p style={{background: 'red'}}>  </p>
             {/* mysql과 똑같은 방법이므로 이미지 공동으로 사용 */}
+            <br/>
             <ImageSlider image={arr=['/img/jsp1_3_','20','.png']}> </ImageSlider>
 
             <Article stitle="4) JSP-OracleDB" content="JSP와 OracleDB 연결하기"/>
@@ -372,28 +373,91 @@ const Jsp2 = () => {
             <a href="https://www.oracle.com/database/technologies/xe-downloads.html" target='blank'> 👀 OracleXE(필수) </a>  <br/>
             <a href="https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html" target='blank'> 👀 OracleDB JDBC 드라이버(필수) </a>  <br/>
             <a href="https://www.oracle.com/tools/downloads/sqldev-downloads.html" target='blank'> 👀 OracleDB Developer </a>  <br/>
+            <br/>
             <ImageSlider image={arr=['/img/jsp2_4_','20','.png']}> </ImageSlider> <br/><br/><br/>
 
             
 
-            <Article stitle="5) JSP 사용하기 " 
-            content="브라우저, 클라이언트, 서버?"/>
+            <Article stitle="5) JSP 사용하기 " content="이클립스에서 JSP파일 생성"/>
+            <Text text="JSP는 HTML과 달리 <%@ %> 기호를 이용한다."> </Text>
+            <p> 만약에 작동이 잘 되지 않는다면 기존에 사용된 서버를 종료하고 다시 연결하기 ,
+                그리고 ctrl + s 저장하기 누르기!! JSP는 저장 안되면 실행x  </p>
+            <p> 개인마다 다르지만 아래의 경로를 따라가면 jsp파일이 java파일(Servlet)로 변한것을 볼 수 있다.   </p>
+            <p> 이클립스폴더\.metadata\.plugins\org.eclipse.wst.server.core
+                \tmp0\work\Catalina\localhost\day2\org\apache\jsp</p>
+            <br/>
+            <ImageSlider image={arr=['/img/jsp2_5_','2','.png']}> </ImageSlider> <br/>
+            
+            <Article stitle="6) Servlet 사용하기" content="이클립스에서 Servlet파일 생성"/>
+            <Text text="Servlet은 코드를 작성하기 번거로우나 JSP파일은 Servlet으로 변환이
+            되므로 개발자는 알아두어야 한다. "> </Text>
+            <p> Servlet은 그냥 실행해도 결과가 나온다 <div className=""></div></p>
+            <br/>
+            <ImageSlider image={arr=['/img/jsp2_6_','5','.png']}> </ImageSlider> <br/>
+            
+            <Article stitle="7) JSP 문법" content="JSP 코드 작성 및 문법이해"/>
+            <p> JSP문법</p>
+            <p> 선언문(Declaration) : &lt;%! %&gt; , (메서드,변수 등)선언 태그 </p>
+            <p> 표현식(Experssion) : &lt;%= %&gt; , 화면에 출력할 때 사용, 메소드 호출</p>
+            <p> 스크립트릿(Scriptlet) : &lt;% %&gt;  , 끊어서도 사용 가능, 일반적인 코드 작성</p>
+            <p> html주석 : &lt;!-- --&gt; </p>
+            <p> JSP주석 : &lt;%-- --%&gt; </p>
+            <p> Java주석 : // , /**/ </p>
+            <br/>
+
+            <p> &lt;%@ isErrorPage="true" %&gt; 에러가 났을때 발생하는 페이지 </p>
+            <p> &lt;%@ errorPage=".jsp" %&gt; 에러가 났을때 발생하는 이동되는 페이지 </p>
+            <p> &lt;%@ include file=".jsp" %&gt; 다른 파일 불러오기  </p>
+            <p> &lt;jsp:include page=".jsp" &gt; &lt;/jsp:include&gt; 요청전달에 사용, 다른페이지를 현재페이지에 포함, 실행시점에 해당파일 호출
+                그 결과를 포함 ,제어권이 현재 페이지</p>
+            <p> &lt;jsp:param value="" name="" @등="" %&gt; 매개변수로 받아옴 </p>
+            <p> &lt;jsp:forward page=".jsp" &gt; &lt;/jsp:forward&gt; 제어권이 다른 페이지 </p>
+            <br/>
+
+            <p> JSP 내장객체 </p>
+            <p>request, resposne, pageContext, session, application, page, out, config</p>
+            <p> HTML에서 파라미터 받아오는 법: request.getParameter("name값"); </p>
+            <p> 요청한 받은값 인코딩: request.setCharacterEncoding("UTF-8");</p>
+            <p> 요청한 받은값 인코딩: request.getParameterValues("배열일떄");</p>
+            <p> 요청받은 메소드 확인 request.getMethod()</p>
+            <p> 요청받은 프로토콜 확인 request.getProtocol()</p>
+            
+            <br/>
+            <ImageSlider image={arr=['/img/jsp2_7_','4','.png']}> </ImageSlider> <br/>
+
+            <Article stitle="8) Servlet 이용" content="Servlet 이용해보기"/>
+            <p>✔ Servlet과 JSP문법의 큰 차이는 없고 HTML코드를 작성하는 부분만 약간 다르다.</p>
+            <p>✔ Ctrl + Shift + O 하면 import가 자동으로 된다.</p>
+            <br/>
+            <ImageSlider image={arr=['/img/jsp2_8_','2','.png']}> </ImageSlider> <br/>
+
+            <Article stitle="9) JSP JavaBean" content="JavaBean 이용"/>
+            <p> 자바Bean은 자바로 작성된 소프트웨어 컴포넌트 </p>
+            <p> 그렇다면 컴포넌트란 무엇인가? 컴포넌트라는 개념은 리액트에서도 볼 수 있는데
+            간단하게 말하자면 가져다가 쓰면 바로 사용이 가능하게 만드는 것이다. 클래스 처럼
+            변수,메소드 등을 가져오는것이 아니라 그냥 그 짜여진 프로그램을 통째로 가져와서 바로 사용할 수 있는것이다.
+            페이스북은 리액트 컴포넌트가 몇천,몇만개로 구성이 되어있다고 한다.
+            백엔드를 공부하고 싶지만 리액트에서 컴포넌트를 사용하고 
+            그 매력에 빠져서 공부중이다라고 한다면 얼마나 좋은지 대답이 될 것 같다.</p>
+            <br/>
+            <ImageSlider image={arr=['/img/jsp2_9_','4','.png']}> </ImageSlider> <br/>
+
+            <Article stitle="10) Servlet 생명주기" content="Servlet 이해"/>
+            <p>✔ Servlet은 생명주기가 존재한다. Init() - Service() - Destroy() </p>
+            <p>✔ Servlet 공간에 Servlet 객체는 한개만 존재하고 똑같은 객체는 만들지 않는다. </p>
+            <p> 1. 사용자가 처음으로 요청을 하면 init()과 service() 메소드를 실행한다. - 메모리에 객체가 없으므로 생성하고 service() 실행 </p>
+            <p> 2. 사용자가 다시 요청을 하면 service() 메소드만 실행을 한다 - 이미 객체가 메모리상에 올라가 있으므로 새롭게 생성하지 않음 </p>
+            <p> 3. 사용자가 servlet 코드를 수정을 하고 저장을 하면 destroy()가 실행이 된다. - 다른 객체가 되었으므로 기존에 있던 객체를 삭제 </p>
+            <br/>
+            <ImageSlider image={arr=['/img/jsp2_10_','0','.png']}> </ImageSlider> <br/>
+           
+            <Article stitle="11) " content=""/>
             <p> </p>
+            <ImageSlider image={arr=['/img/jsp2_9_','0','.png']}> </ImageSlider> <br/>           
             
-            
-            <Article stitle="6) " content="?"/>
-            <WordDescV1 desc=""
-            example=""> </WordDescV1>
-
-            
-            <Article stitle="6) " content="?"/>
-            <WordDescV1 desc=""
-            example=""> </WordDescV1>
-
-            <Article stitle="6) " content="?"/> 
-            <WordDescV1 desc=""
-            example=""> </WordDescV1>
-                        
+            <Article stitle="12)" content=""/>
+            <p>  </p>
+            <ImageSlider image={arr=['/img/jsp2_9_','0','.png']}> </ImageSlider> <br/>           
         </div>
     );
 }

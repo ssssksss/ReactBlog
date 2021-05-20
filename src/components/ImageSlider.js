@@ -5,14 +5,18 @@ import './ImageSlider.css';
 const ImageSlider = (props) => {
     var [pageNum,setPageNum] = useState(1);
     return (
-        <div className="img_container">
-            <button className ="left_arrow_button arrow_button" onClick={()=> {
-                if(pageNum>1) { setPageNum(parseInt(pageNum)-1); }}}>  &lt; </button>
-            <img className="img_" src={process.env.PUBLIC_URL + props.image[0] + pageNum +props.image[2]}/>
-            <button className ="right_arrow_button arrow_button" onClick={()=> {
-                if(pageNum<props.image[1]) {setPageNum(parseInt(pageNum)+1);}}}> &gt; </button>
-            <div className="showpagenum"> {pageNum} / {props.image[1]} </div>
-        </div>
+        <>
+        {props.image[1]==0?null:
+            <div className="img_container" >
+                <button className ="left_arrow_button arrow_button" onClick={()=> {
+                    if(pageNum>1) { setPageNum(parseInt(pageNum)-1); }}}>  &lt; </button>
+                <img className="img_" src={process.env.PUBLIC_URL + props.image[0] + pageNum +props.image[2]}/>
+                <button className ="right_arrow_button arrow_button" onClick={()=> {
+                    if(pageNum<props.image[1]) {setPageNum(parseInt(pageNum)+1);}}}> &gt; </button>
+                <div className="showpagenum"> {pageNum} / {props.image[1]} </div>
+            </div>
+        }
+        </>
     );   
  }
 

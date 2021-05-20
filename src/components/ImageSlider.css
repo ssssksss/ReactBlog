@@ -1,7 +1,13 @@
+.img_container {
+  background: linear-gradient(135deg, rgba(33, 164, 92), rgba(23, 154, 82));
+  padding-top: 20px;
+}
+
 .img_ {
   width: 680px;
-  /* height: 600px; */
-  background-size: contain;
+  height: 680px;
+  /* background-size: contain; */
+  object-fit: contain;
 }
 
 .arrow_button {

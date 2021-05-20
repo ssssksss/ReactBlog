@@ -58,6 +58,7 @@ function Sidemenu(props) {
               <Sidemenu goToMenu="typescript">TypeScript👉 </Sidemenu>
               <Sidemenu goToMenu="nodejs_f"> Node.js👉 </Sidemenu>
               <Sidemenu goToMenu="react"> React👉 </Sidemenu>
+              <Sidemenu goToMenu="frontenderror"> 프론트엔드 오류👉 </Sidemenu>
               {/* <Sidemenu goToMenu="vuejs"> Vue.js </Sidemenu> */}
               {/* <Sidemenu goToMenu="">  </Sidemenu> */}
             </div>
@@ -78,6 +79,7 @@ function Sidemenu(props) {
               <Sidemenu goToMenu="nodejs_b"> Node.js👉 </Sidemenu>
               <Sidemenu goToMenu="oracledb">OracleDB👉 </Sidemenu>
               <Sidemenu goToMenu="mysql">MySQL👉 </Sidemenu>
+              <Sidemenu goToMenu="backenderror"> 백엔드 오류👉 </Sidemenu>
               {/* <Sidemenu goToMenu="codemenu"> MongoDB </Sidemenu> */}
               {/* <Sidemenu goToMenu="makemenu"> Mysql </Sidemenu> */}
               {/* <Sidemenu goToMenu="makemenu"> MariaDB </Sidemenu> */}
@@ -113,6 +115,7 @@ function Sidemenu(props) {
               <Sidemenu goToMenu="server"> server,network👉 </Sidemenu>
               <Sidemenu goToMenu="rinux"> rinux👉 </Sidemenu>
               <Sidemenu goToMenu="window"> window👉 </Sidemenu>
+              <Sidemenu goToMenu="networkerror"> 오류👉 </Sidemenu>
               {/* <Sidemenu goToMenu="">  </Sidemenu> */}
             </div>
         </CSSTransition>
@@ -129,6 +132,7 @@ function Sidemenu(props) {
               <Sidemenu goToMenu="design_pattern"> design pattern👉 </Sidemenu>
               <Sidemenu goToMenu="algorithm"> Algorithm👉 </Sidemenu>
               <Sidemenu goToMenu="data_structure"> Data structure👉 </Sidemenu>
+              <Sidemenu goToMenu="refactory"> refactoring👉 </Sidemenu>
               {/* <Sidemenu goToMenu="">  </Sidemenu> */}
             </div>
         </CSSTransition>
@@ -245,6 +249,21 @@ function Sidemenu(props) {
             <div className="menu menu3">
               <Sidemenu goToMenu="frontendmenu"> React </Sidemenu>
               <Sidemenu> <a href="#" onClick={()=>{send('react1')}}> React1👉 </a>  </Sidemenu>
+              {/* <Sidemenu goToMenu="">  </Sidemenu> */}
+            </div>
+
+        </CSSTransition>
+
+        <CSSTransition             
+            in={activeMenu === 'frontenderror'}
+            timeout={500}
+            classNames="menu-third"
+            unmountOnExit
+            onEnter={()=>setActiveMenu('frontenderror')}>
+              
+            <div className="menu menu3">
+              <Sidemenu goToMenu="frontendmenu"> 프론트엔드 오류 </Sidemenu>
+              <Sidemenu> <a href="#" onClick={()=>{send('error')}}> 프론트엔드 오류👉 </a>  </Sidemenu>
               {/* <Sidemenu goToMenu="">  </Sidemenu> */}
             </div>
 
