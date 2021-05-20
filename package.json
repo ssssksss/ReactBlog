@@ -1,8 +1,7 @@
 {
-  "homepage": "http://ssssksss.github.io/test-react",
+  "homepage": "http://ssssksss.github.io/ReactBlog",
   "name": "lecture",
   "version": "0.1.0",
-  "comment1": "주석: ",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -50,11 +49,11 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ssssksss/test-react.git"
+    "url": "git+https://github.com/ssssksss/ReactBlog.git"
   },
   "author": "cadi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ssssksss/test-react/issues"
+    "url": "https://github.com/ssssksss/ReactBlog/issues"
   }
 }
