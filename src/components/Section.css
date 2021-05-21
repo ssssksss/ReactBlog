@@ -1,31 +1,52 @@
 .section_container {
-  padding: 0px;
-  width: 1400px;
-  margin: auto;
-  background: linear-gradient(rgb(222, 238, 205), rgba(218, 205, 238, 0.6));
-  display: flex;
-  justify-content: space-around;
+  width: 100%;
+  margin-left: 20px;
+  display: block;
 }
 .area_container {
   background: rgba(43, 174, 102);
+  margin-top: 20px;
   border-radius: 5px;
   box-sizing: border-box;
   padding: 5px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  min-height: 50px;
   color: white;
 }
 
-.leftaside_container {
-  width: 320px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 .postarea_container {
-  width: 680px;
+  max-width: 920px;
+  margin-right: 20px;
+  float: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.rightaside_container {
-  width: 320px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+@media screen and (min-width: 1400px) {
+  .rightaside_container {
+    max-width: 460px;
+    width: 100%;
+    margin-right: 40px;
+    background: brown;
+    float: right;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .rightaside_container::after {
+    content: "오른쪽 사이드 영역";
+  }
+}
+@media screen and (max-width: 1440px) {
+  .rightaside_container {
+    background: brown;
+    position: fixed;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    float: right;
+    width: 50px;
+    height: 80px;
+    opacity: 0.5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .rightaside_container::after {
+    content: "<";
+    cursor: pointer;
+    vertical-align: middle;
+  }
 }

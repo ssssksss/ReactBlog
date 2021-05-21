@@ -29,6 +29,9 @@ h3 {
   position: relative;
   /* 글 작성할때 전부 padding 5px가 있어서 우측으로 밀리는 것을 왼쪽으로 밀음 */
   right: 5px;
-  width: 680px;
+  max-width: 920px;
   height: 800px;
+}
+.page_container {
+  width: 100%;
 }

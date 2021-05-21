@@ -171,7 +171,7 @@ const Jsp1 = () => {
     var arr = [];
 
     return(
-        <div>
+        <div className="page_container">
             <Title div="1. JSP 기초"> <a name="top"> </a></Title>
 
             <Article stitle="1) JSP" content="JSP란?"/>
@@ -260,7 +260,7 @@ const Jsp2 = () => {
     var arr = [];
 
     return(
-        <div>
+        <div className="page_container">
             <Title div="1. JSP 기초"> <a name="top"> </a></Title>
 
             <Article stitle="1) JSP" content="JSP란?"/>
@@ -467,7 +467,7 @@ const Network1 = () => {
     var arr = [];
 
     return(
-        <div>
+        <div className="page_container">
             <Title div="1. Network 기초"> <a name="top"> </a></Title>
 
             <Article stitle="1) Protocol" content="Protocol 이란?"/>
@@ -527,7 +527,7 @@ const Design1 = () => {
     var arr = [];
 
     return(
-        <div>
+        <div className="page_container">
             <Title div="1. Figma"> <a name="top"> </a></Title>
 
             <Article stitle="6) " content="?"/>

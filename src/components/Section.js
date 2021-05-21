@@ -12,21 +12,14 @@ const Section = (props) => {
     },[props.page])
 
     return (
-      <ul class="section_container">
-            <LeftAside> </LeftAside>
-            <PostArea page={changePage}> </PostArea>
-            <RightAside> </RightAside>
+      <ul className="section_container">
+          {/* <LeftAside> </LeftAside> */}
+          <PostArea page={changePage}> </PostArea>
+          <RightAside> </RightAside>
       </ul>
     );
   }
 
-  const LeftAside = (props) => {
-    return (
-      <li className="leftaside_container area_container">
-        왼쪽 사이드 영역
-      </li>
-    );
-  }
   const PostArea = (props) => {
     return (
       <li className="postarea_container area_container">
@@ -37,7 +30,6 @@ const Section = (props) => {
   const RightAside = (props) => {
     return (
       <li className="rightaside_container area_container">
-        오른쪽 사이드 영역
       </li>
     );
   }

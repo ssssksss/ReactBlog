@@ -3,8 +3,10 @@ import './Footer.css';
 
 const Footer = (props) => {
   return (
-    <footer class="footer_container">
-      바닥
+    <footer>
+      <div class="footer_container">
+        바닥
+      </div>
     </footer>
   );
 }
