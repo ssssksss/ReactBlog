@@ -15,10 +15,10 @@ input[type="checkbox"] {
   display: none;
 }
 .nav_container {
+  max-width: 1400px;
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  max-width: 1400px;
   background: royalblue;
   height: 80px;
 }
@@ -74,7 +74,6 @@ input[type="checkbox"] {
 }
 
 /* 사이드메뉴 버튼 클릭하면 효과주기 */
-
 .nav_container
   > input[type="checkbox"]:checked
   + .menuicon_container
@@ -109,17 +108,38 @@ input[type="checkbox"] {
 }
 
 .logo_container {
-  width: 160px;
+  width: 240px;
   height: 80px;
   background: gold;
   float: left;
 }
-.nav_menu_container {
-  width: 320px;
-  height: 80px;
-  background: red;
-  float: right;
+
+@media screen and (min-width: 680px) {
+  .nav_menu_container {
+    width: 320px;
+    height: 80px;
+    background: red;
+    float: right;
+  }
 }
+
+@media screen and (max-width: 680px) {
+  .nav_menu_container {
+    width: 320px;
+    height: 80px;
+    background: red;
+    float: left;
+  }
+  .nav_container {
+    max-width: 320px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background: royalblue;
+    height: 80px;
+  }
+}
+
 .nav_menu_container > ul > li {
   width: 60px;
   height: 60px;
@@ -127,6 +147,7 @@ input[type="checkbox"] {
   display: inline-block;
   margin: 10px;
 }
+
 .side_menu_container {
   position: absolute;
   width: 320px;
