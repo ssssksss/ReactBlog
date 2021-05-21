@@ -8,13 +8,19 @@
   position: relative;
   width: 100%;
 }
-
 .img_ {
   max-width: 920px;
-  max-height: 680px;
+  max-height: 800px;
   width: 100%;
-  object-fit: contain;
   display: block;
+}
+@media screen and (max-width: 800px) {
+  .img_ {
+    max-width: 920px;
+    max-height: 600px;
+    width: 100%;
+    display: block;
+  }
 }
 .img_button_position {
   margin: auto;
