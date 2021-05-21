@@ -1,5 +1,6 @@
 footer {
   clear: both;
+  max-width: 1440px;
   width: 100%;
   background: rgba(138, 46, 246, 0.3);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -11,4 +12,24 @@ footer {
   box-sizing: border-box;
   background: #777777;
   margin: 0px 20px;
+}
+
+@media screen and (min-width: 1440px) {
+  .footer_container {
+    max-width: 1400px;
+    height: 300px;
+    box-sizing: border-box;
+    background: #777777;
+    margin: 0px 20px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .footer_container {
+    max-width: 320px;
+    height: 300px;
+    box-sizing: border-box;
+    background: #777777;
+    margin: 0px 20px;
+  }
 }

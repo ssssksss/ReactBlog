@@ -14,10 +14,10 @@
   width: 100%;
   display: block;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 680px) {
   .img_ {
     max-width: 920px;
-    max-height: 600px;
+    max-height: 300px;
     width: 100%;
     display: block;
   }
