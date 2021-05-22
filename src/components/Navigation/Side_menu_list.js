@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import './Sidemenulist.css';
+import './Side_menu_list.css';
 
 function Sidemenulist(props) {
   const [activeMenu,setActiveMenu] = useState('main');
@@ -56,7 +56,6 @@ function Sidemenu(props) {
               <Sidemenu goToMenu="css"> CSS👉 </Sidemenu>
               <Sidemenu goToMenu="javascript"> JavaScript👉 </Sidemenu>
               <Sidemenu goToMenu="typescript">TypeScript👉 </Sidemenu>
-              <Sidemenu goToMenu="nodejs_f"> Node.js👉 </Sidemenu>
               <Sidemenu goToMenu="react"> React👉 </Sidemenu>
               <Sidemenu goToMenu="frontenderror"> 프론트엔드 오류👉 </Sidemenu>
               {/* <Sidemenu goToMenu="vuejs"> Vue.js </Sidemenu> */}
@@ -76,7 +75,7 @@ function Sidemenu(props) {
               <Sidemenu goToMenu="java"> Java👉</Sidemenu>
               <Sidemenu goToMenu="jsp"> JSP👉 </Sidemenu>
               <Sidemenu goToMenu="php"> PHP👉 </Sidemenu>
-              <Sidemenu goToMenu="nodejs_b"> Node.js👉 </Sidemenu>
+              <Sidemenu goToMenu="nodejs"> Node.js👉 </Sidemenu>
               <Sidemenu goToMenu="oracledb">OracleDB👉 </Sidemenu>
               <Sidemenu goToMenu="mysql">MySQL👉 </Sidemenu>
               <Sidemenu goToMenu="backenderror"> 백엔드 오류👉 </Sidemenu>
@@ -224,21 +223,6 @@ function Sidemenu(props) {
             </div>
         </CSSTransition>
 
-
-        <CSSTransition             
-            in={activeMenu === 'nodejs_f'}
-            timeout={500}
-            classNames="menu-third"
-            unmountOnExit
-            onEnter={()=>setActiveMenu('nodejs_f')}>
-
-            <div className="menu menu3">
-              <Sidemenu goToMenu="frontendmenu"> Node.js </Sidemenu>
-              <Sidemenu> <a href="#" onClick={()=>{send('nodejs_f1')}}> Node.js1👉 </a>  </Sidemenu>
-              {/* <Sidemenu goToMenu="">  </Sidemenu> */}
-            </div>
-        </CSSTransition>
-
         <CSSTransition             
             in={activeMenu === 'react'}
             timeout={500}
@@ -279,12 +263,10 @@ function Sidemenu(props) {
 
             <div className="menu menu3">
               <Sidemenu goToMenu="backendmenu"> Java </Sidemenu>
-                <Sidemenu> <a href="#" onClick={()=>{send('java1')}}>Java1👉</a>  </Sidemenu>
-                {/* <Sidemenu> <a href="#" onClick={()=>{send('jsp2')}}>JSP2</a>  </Sidemenu> */}
-              {/* <Sidemenu goToMenu="">  </Sidemenu> */}
+              <Sidemenu> <a href="#" onClick={()=>{send('java1')}}>Java1👉</a>  </Sidemenu>
             </div>
         </CSSTransition>
-        
+
         <CSSTransition             
             in={activeMenu === 'jsp'}
             timeout={500}
@@ -316,15 +298,15 @@ function Sidemenu(props) {
         </CSSTransition>
 
         <CSSTransition             
-            in={activeMenu === 'nodejs_b'}
+            in={activeMenu === 'nodejs'}
             timeout={500}
             classNames="menu-third"
             unmountOnExit
-            onEnter={()=>setActiveMenu('nodejs_b')}>
+            onEnter={()=>setActiveMenu('nodejs')}>
 
             <div className="menu menu3">
               <Sidemenu goToMenu="backendmenu"> Node.js </Sidemenu>
-                <Sidemenu> <a href="#" onClick={()=>{send('nodejs_b1')}}>Node.js1👉</a>  </Sidemenu>
+                <Sidemenu> <a href="#" onClick={()=>{send('nodejs1')}}>Node.js1👉</a>  </Sidemenu>
                 {/* <Sidemenu> <a href="#" onClick={()=>{send('jsp2')}}>JSP2</a>  </Sidemenu> */}
               {/* <Sidemenu goToMenu="">  </Sidemenu> */}
             </div>

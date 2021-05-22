@@ -23,24 +23,7 @@
   margin-left: 10px;
 }
 
-.menu1 {
-  /* background-image: linear-gradient(#59c173, #a17fe0, #5d26c1);
-  background-clip: text;
-  -webkit-text-fill-color: transparent; */
-  color: white;
-}
-
-.menu2 {
-  /* background-image: linear-gradient(#2193b0, #6dd5ed);
-  background-clip: text;
-  -webkit-text-fill-color: transparent; */
-  color: white;
-}
-
-.menu3 {
-  /* background-image: linear-gradient(#acb6e5, #86fde8);
-  background-clip: text;
-  -webkit-text-fill-color: transparent; */
+.menu {
   color: white;
 }
 
@@ -68,8 +51,6 @@
   transform: translateX(0%);
   transition: all 1s ease;
 }
-.menu-second-exit {
-}
 .menu-second-exit-active {
   transform: translateX(-110%);
   transition: all 1s ease;
@@ -81,8 +62,6 @@
 .menu-third-enter-active {
   transform: translateX(0%);
   transition: all 1s ease;
-}
-.menu-third-exit {
 }
 .menu-third-exit-active {
   transform: translateX(-110%);

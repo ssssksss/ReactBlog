@@ -122,9 +122,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.body_container {
+
+/* .body_container {
   max-width: 1440px;
   margin: auto;
+  background: #aeaeae;
 }
 .top {
   width: 40px;
@@ -134,4 +136,4 @@ table {
   bottom: 0;
   right: 0;
   background: gold;
-}
+} */

@@ -20,8 +20,8 @@ const Page = (props) => {
             return(<Jsp1></Jsp1>);
         case 'jsp2': //jsp - apachetomcat - oracledb
             return(<Jsp2></Jsp2>);
-        case 'nodejs_b1': //nodejs_backend
-            return(<Nodejs_b1></Nodejs_b1>);
+        case 'nodejs1': //nodejs
+            return(<Nodejs1></Nodejs1>);
         case 'OracleDB':
             return(<OracleDB1></OracleDB1>);
         case 'MySQL':
@@ -485,14 +485,14 @@ const Jsp2 = () => {
     );
 }
 
-const Nodejs_b1 = () => {
+const Nodejs1 = () => {
     var arr = [];
 
     return(
         <div className="page_container">
-            <Title div="1. Nodejs_Backend"> <a name="top"> </a></Title>
+            <Title div="1. Nodejs1"> <a name="top"> </a></Title>
 
-            <Article stitle="6) " content="?"/>
+            <Article stitle="1) NodeJS" content="NodeJS란"/>
             <WordDescV1 desc=""
             example=""> </WordDescV1>
 

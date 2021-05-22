@@ -1,19 +1,18 @@
 .section_container {
-  background: rgba(43, 174, 102);
-  display: block;
+  /* background: rgba(43, 174, 102); */
+  display: inline-block;
   position: relative;
+  max-width: 1400px;
 }
 .postarea_container {
   background: rgba(43, 174, 102);
   border-radius: 5px;
-  color: white;
+  color: black;
 }
 @media screen and (min-width: 1440px) {
-  .section_container {
-    max-width: 1440px;
-  }
   .postarea_container {
-    width: 960px;
+    width: 920px;
+    margin-left: 20px;
   }
 
   .rightaside_container {
@@ -27,12 +26,23 @@
   }
 }
 @media screen and (max-width: 1440px) {
+  .postarea_container {
+    min-width: 620px;
+  }
   .section_container {
-    max-width: 1440px;
+    max-width: 1400px;
+    margin: auto;
+    height: 400px;
+    /* background: green; */
+    margin: 0px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 }
 @media screen and (max-width: 680px) {
+  .postarea_container {
+    max-width: 320px;
+  }
   .section_container {
-    max-width: 360px;
+    max-width: 320px;
   }
 }

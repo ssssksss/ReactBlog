@@ -23,26 +23,32 @@ h3 {
   font-size: 20px;
   padding-bottom: 10px;
 }
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
 .page_container {
   min-height: 500px;
   margin: 0 0 0 20px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
 }
 @media screen and (min-width: 1440px) {
   .page_container {
     max-width: 920px;
-    background: red;
+    /* background: red; */
   }
 }
 @media screen and (max-width: 1440px) {
   .page_container {
     max-width: 1400px;
-    background: gold;
+    /* background: gold; */
     margin-right: 20px;
   }
 }
 @media screen and (max-width: 680px) {
   .page_container {
     max-width: 320px;
-    background: blue;
+    /* background: blue; */
+    word-break: break-all;
   }
 }

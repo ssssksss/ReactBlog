@@ -12,26 +12,26 @@ const Section = (props) => {
     },[props.page])
 
     return (
-      <ul className="section_container">
+      <div className="section_container">
           {/* <LeftAside> </LeftAside> */}
           <PostArea page={changePage}> </PostArea>
           <RightAside> </RightAside>
-      </ul>
+      </div>
     );
   }
 
   const PostArea = (props) => {
     return (
-      <li className="postarea_container area_container">
+      <div className="postarea_container area_container">
           <Page page={props.page}> </Page>
-      </li>
+      </div>
     );
   }
   const RightAside = (props) => {
     return (
-      <li className="rightaside_container area_container">
+      <div className="rightaside_container area_container">
         사이드 메뉴
-      </li>
+      </div>
     );
   }
 export default Section;

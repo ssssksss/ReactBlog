@@ -1,0 +1,135 @@
+.nav_container {
+  height: 80px;
+  margin: 20px 0px;
+  background: red;
+}
+.nav_frame {
+  position: relative;
+}
+/* 체크박스 */
+.nav_frame > input[type="checkbox"] {
+  display: none;
+}
+/* 왼쪽 메뉴 공간 */
+.menuicon_container {
+  width: 80px;
+  height: 80px;
+  float: left;
+  position: relative;
+  background: yellow;
+}
+
+.menuicon_container > label {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 2;
+  background: green;
+}
+.menuicon_container > label > span {
+  width: 20px;
+  height: 4px;
+  display: block;
+  position: absolute;
+  left: 10px;
+  background: #aeaeae;
+}
+.menuicon_container > label > span:nth-child(1) {
+  top: 7px;
+}
+.menuicon_container > label > span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menuicon_container > label > span:nth-child(3) {
+  bottom: 7px;
+}
+/* 왼쪽 메뉴 공간 애니메이션 */
+input[type="checkbox"]:checked
+  + .menuicon_container
+  > label
+  > span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+input[type="checkbox"]:checked
+  + .menuicon_container
+  > label
+  > span:nth-child(2) {
+  display: none;
+}
+input[type="checkbox"]:checked
+  + .menuicon_container
+  > label
+  > span:nth-child(3) {
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}
+/* 로고 공간 */
+.logo_container {
+  width: 240px;
+  height: 80px;
+  float: left;
+  background: yellow;
+}
+.logo_container > div {
+  width: 236px;
+  height: 76px;
+  margin: 2px;
+  background: green;
+}
+.nav_menu_container {
+  width: 320px;
+  height: 80px;
+  float: right;
+  background: yellow;
+}
+.nav_menu_container > ul > li {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  background: green;
+  margin: 10px;
+  cursor: pointer;
+}
+/* 사이드 메뉴 목록 공간 */
+.side_menu_container {
+  display: none;
+}
+input[type="checkbox"]:checked ~ .side_menu_container {
+  width: 320px;
+  height: 800px;
+  background: blue;
+  position: absolute;
+  display: block;
+}
+/* 미디어 쿼리 */
+.nav_frame {
+  height: 80px;
+  margin: auto;
+  background: orange;
+}
+@media screen and (min-width: 1024px) {
+  .nav_frame {
+    width: 80vw;
+    min-width: 1024px;
+    max-width: 1400px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .nav_frame {
+    width: 80vw;
+    max-width: 1023px;
+    min-width: 767px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .nav_frame {
+    width: 80vw;
+    max-width: 320px;
+  }
+}
