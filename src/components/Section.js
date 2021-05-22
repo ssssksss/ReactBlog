@@ -30,6 +30,7 @@ const Section = (props) => {
   const RightAside = (props) => {
     return (
       <li className="rightaside_container area_container">
+        사이드 메뉴
       </li>
     );
   }

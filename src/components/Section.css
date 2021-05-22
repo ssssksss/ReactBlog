@@ -1,90 +1,38 @@
 .section_container {
-  width: 100%;
-  margin-left: 20px;
-  display: block;
-  max-width: 1400px;
-}
-.area_container {
   background: rgba(43, 174, 102);
-  margin-top: 20px;
+  display: block;
+  position: relative;
+}
+.postarea_container {
+  background: rgba(43, 174, 102);
   border-radius: 5px;
-  box-sizing: border-box;
-  padding: 5px;
   color: white;
 }
-
 @media screen and (min-width: 1440px) {
+  .section_container {
+    max-width: 1440px;
+  }
   .postarea_container {
-    max-width: 920px;
-    margin-right: 20px;
-    float: left;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 960px;
   }
 
   .rightaside_container {
-    max-width: 439px;
-    width: 100%;
-    display: block;
-    margin-right: 20px;
-    background: brown;
-    float: right;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  .rightaside_container::after {
-    content: "오른쪽 사이드 영역";
+    max-width: 440px;
+    width: 440px;
+    min-height: 500px;
+    position: absolute;
+    left: 980px;
+    top: 0;
+    background: palegreen;
   }
 }
-
 @media screen and (max-width: 1440px) {
-  .postarea_container {
-    max-width: 920px;
-    margin-right: 40px;
-    float: left;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  .rightaside_container {
-    background: brown;
-    position: fixed;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    float: right;
-    width: 50px;
-    height: 50px;
-    opacity: 0.5;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  .rightaside_container::after {
-    content: "<";
-    cursor: pointer;
-    vertical-align: middle;
+  .section_container {
+    max-width: 1440px;
   }
 }
-
 @media screen and (max-width: 680px) {
-  .postarea_container {
-    max-width: 320px;
-    margin-right: 40px;
-    float: left;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  .rightaside_container {
-    background: brown;
-    position: fixed;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    float: right;
-    width: 50px;
-    height: 50px;
-    opacity: 0.5;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  .rightaside_container::after {
-    content: "<";
-    cursor: pointer;
-    vertical-align: middle;
+  .section_container {
+    max-width: 360px;
   }
 }

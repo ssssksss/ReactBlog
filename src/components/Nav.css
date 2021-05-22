@@ -27,9 +27,9 @@ input[type="checkbox"] {
   height: 80px;
   background: red;
   display: block;
-  float: left;
   position: relative;
   z-index: 2;
+  float: left;
 }
 .menuicon_container > label {
   width: 40px;
@@ -40,7 +40,7 @@ input[type="checkbox"] {
   top: 20px;
   left: 20px;
   cursor: pointer;
-  z-index: 3;
+  z-index: 2;
 }
 .menuicon_container > label > span {
   width: 20px;
@@ -153,4 +153,5 @@ input[type="checkbox"] {
   width: 320px;
   background: brown;
   display: none;
+  z-index: 1;
 }

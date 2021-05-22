@@ -13,15 +13,26 @@ const Page = (props) => {
     switch(page) {
         case 'main':
             return(<Main1></Main1>);
-        case 'html1': //html
-            return(<Html1></Html1>);
+            // 백엔드
+        case 'java1':
+            return(<Java1></Java1>);            
         case 'jsp1': //jsp - apachetomcat - mysql
             return(<Jsp1></Jsp1>);
         case 'jsp2': //jsp - apachetomcat - oracledb
             return(<Jsp2></Jsp2>);
-        case 'network1': //network
+        case 'nodejs_b1': //nodejs_backend
+            return(<Nodejs_b1></Nodejs_b1>);
+        case 'OracleDB':
+            return(<OracleDB1></OracleDB1>);
+        case 'MySQL':
+            return(<MySQL1></MySQL1>);
+        case 'Backend_error':
+                return(<Backend_error1></Backend_error1>);
+        case 'html1':
+            return(<Html1></Html1>);
+        case 'network1':
             return(<Network1></Network1>);
-        case 'design1': //network
+        case 'design1':
             return(<Design1></Design1>);
         default:
             return(<></>);
@@ -88,7 +99,7 @@ const Main1 = () => {
 //1. HTML 태그 종류
 const Html1 = () => {
     return(
-        <div>
+        <div className="page_container">
             <Title div="1. HTML 태그 종류"><a name="top"> </a></Title>
 
             <Article stitle="1) div태그" content="div태그란?"/>
@@ -165,7 +176,19 @@ const Html1 = () => {
         </div>
     );
 }
+const Java1 = () => {
+    var arr = [];
 
+    return(
+        <div className="page_container">
+            <Title div="1. Java"> <a name="top"> </a></Title>
+
+            <Article stitle="1) " content="?"/>
+            <WordDescV1 desc=""
+            example=""> </WordDescV1>                      
+        </div>
+    );
+}
 //JSP - MySQL
 const Jsp1 = () => {
     var arr = [];
@@ -458,6 +481,63 @@ const Jsp2 = () => {
             <Article stitle="12)" content=""/>
             <p>  </p>
             <ImageSlider image={arr=['/img/jsp2_9_','0','.png']}> </ImageSlider> <br/>           
+        </div>
+    );
+}
+
+const Nodejs_b1 = () => {
+    var arr = [];
+
+    return(
+        <div className="page_container">
+            <Title div="1. Nodejs_Backend"> <a name="top"> </a></Title>
+
+            <Article stitle="6) " content="?"/>
+            <WordDescV1 desc=""
+            example=""> </WordDescV1>
+
+            
+                        
+        </div>
+    );
+}
+const OracleDB1 = () => {
+    var arr = [];
+
+    return(
+        <div className="page_container">
+            <Title div="1. OracleDB"> <a name="top"> </a></Title>
+
+            <Article stitle="1) " content="?"/>
+            <WordDescV1 desc=""
+            example=""> </WordDescV1>                      
+        </div>
+    );
+}
+
+const MySQL1 = () => {
+    var arr = [];
+
+    return(
+        <div className="page_container">
+            <Title div="1. MySQL"> <a name="top"> </a></Title>
+
+            <Article stitle="1) " content="?"/>
+            <WordDescV1 desc=""
+            example=""> </WordDescV1>                      
+        </div>
+    );
+}
+const Backend_error1 = () => {
+    var arr = [];
+
+    return(
+        <div className="page_container">
+            <Title div="1. Backend_error"> <a name="top"> </a></Title>
+
+            <Article stitle="1) " content="?"/>
+            <WordDescV1 desc=""
+            example=""> </WordDescV1>                      
         </div>
     );
 }

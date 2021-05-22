@@ -1,35 +1,62 @@
-._container {
-  width: 100%;
-}
-.img_container {
-  background: linear-gradient(135deg, rgba(33, 164, 92), rgba(23, 154, 82));
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-}
-.img_ {
-  max-width: 920px;
-  max-height: 800px;
-  width: 100%;
-  display: block;
-}
-@media screen and (max-width: 680px) {
+@media screen and (min-width: 680px) {
+  ._container {
+    width: 100%;
+  }
   .img_ {
-    max-width: 920px;
-    max-height: 300px;
+    margin: auto;
     width: 100%;
     display: block;
+    max-height: 700px;
+  }
+  .img_container {
+    background: linear-gradient(135deg, rgba(33, 164, 92), rgba(23, 154, 82));
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    object-fit: contain;
+  }
+  .img_button_position {
+    margin: auto;
+    width: 250px;
+    background: red;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
-.img_button_position {
-  margin: auto;
-  width: 250px;
-  background: red;
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  transform: translateX(-50%);
+@media screen and (max-width: 680px) {
+  ._container {
+    width: 320px;
+  }
+  .img_ {
+    margin: auto;
+    width: 100%;
+    display: block;
+    min-height: 300px;
+  }
+  .img_container {
+    background: linear-gradient(135deg, rgba(33, 164, 92), rgba(23, 154, 82));
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    width: 320px;
+
+    /* 이미지 틀에 높이를 지정하는 곳 */
+    min-height: 450px;
+  }
+  .img_button_position {
+    margin: auto;
+    width: 250px;
+    background: red;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .arrow_button {
@@ -37,7 +64,7 @@
   background: transparent;
   display: inline-block;
   font-size: 50px;
-  margin: 0px 2px;
+  padding: 0px 2px;
 }
 
 .left_arrow_button {
