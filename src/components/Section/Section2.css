@@ -1,0 +1,68 @@
+.section2_container {
+  margin: auto;
+  background: red;
+  max-width: 1400px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.section2_frame {
+  margin: auto;
+  min-height: 400px;
+  background: orange;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.area1_container {
+  padding: 0 10px;
+  box-sizing: border-box;
+  background: green;
+}
+.area1_container {
+  float: left;
+}
+.area2_container {
+  float: right;
+}
+
+@media screen and (min-width: 1024px) {
+  .section2_container {
+    min-width: 1024px;
+  }
+  .area1_container {
+    width: 70%;
+    background: yellow;
+    max-width: 1100px;
+  }
+  .area2_container {
+    width: 30%;
+    min-width: 300px;
+    min-height: 400px;
+    background: yellow;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .section2_container {
+    min-width: 768px;
+  }
+  .area1_container {
+    width: 100%;
+    background: yellow;
+  }
+  .area2_container {
+    width: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section2_container {
+    width: 440px;
+    background: yellow;
+  }
+  .area1_container {
+    width: 400px;
+    background: yellow;
+  }
+  .area2_container {
+    width: 0;
+  }
+}

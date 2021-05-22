@@ -122,18 +122,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-/* .body_container {
-  max-width: 1440px;
+.App_container {
   margin: auto;
-  background: #aeaeae;
 }
-.top {
-  width: 40px;
-  height: 40px;
-  display: block;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  background: gold;
-} */

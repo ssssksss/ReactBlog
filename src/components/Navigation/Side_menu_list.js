@@ -19,7 +19,7 @@ function Sidemenu(props) {
   
   return (
     <div className="side_menu_list">
-        
+
         {/* 첫번째 메뉴 */}
 
         <CSSTransition             
@@ -29,7 +29,6 @@ function Sidemenu(props) {
             unmountOnExit
             onEnter={()=>setActiveMenu('main')}>
             <div className="menu menu1">
-
               <Sidemenu> <a onClick={()=>{ send('main'); }}> 메인 메뉴 </a> </Sidemenu>
               <Sidemenu goToMenu="backendmenu"> 백엔드👉  </Sidemenu>
               <Sidemenu goToMenu="frontendmenu"> 프론트엔드👉  </Sidemenu>
@@ -39,6 +38,8 @@ function Sidemenu(props) {
               <Sidemenu goToMenu="devtoolmenu"> 개발도구👉 </Sidemenu>
               <Sidemenu goToMenu="makemenu"> 만들어보기👉</Sidemenu>
             </div>
+
+            
         </CSSTransition>
 
         {/* 두번째 메뉴  ========================================================= */}
@@ -267,6 +268,8 @@ function Sidemenu(props) {
             </div>
         </CSSTransition>
 
+
+
         <CSSTransition             
             in={activeMenu === 'jsp'}
             timeout={500}
@@ -351,7 +354,6 @@ function Sidemenu(props) {
             <div className="menu menu3">
               <Sidemenu goToMenu="backendmenu"> Network </Sidemenu>
                 <Sidemenu> <a href="#" onClick={()=>{send('design1')}}>Figma 👉</a>  </Sidemenu>
-                {/* <Sidemenu> <a href="#" onClick={()=>{send('jsp2')}}>JSP2</a>  </Sidemenu> */}
             </div>
         </CSSTransition>
 
@@ -367,15 +369,8 @@ function Sidemenu(props) {
             <div className="menu menu3">
               <Sidemenu goToMenu="backendmenu"> Network </Sidemenu>
                 <Sidemenu> <a href="#" onClick={()=>{send('network1')}}>Network 이론👉</a>  </Sidemenu>
-                {/* <Sidemenu> <a href="#" onClick={()=>{send('jsp2')}}>JSP2</a>  </Sidemenu> */}
             </div>
         </CSSTransition>
-        
-        {/* 세번째 메뉴 - 프론트 엔드 ========================================================= */}
-        {/* 세번째 메뉴 - 프론트 엔드 ========================================================= */}
-        {/* 세번째 메뉴 - 프론트 엔드 ========================================================= */}
-        {/* 세번째 메뉴 - 프론트 엔드 ========================================================= */}
-        
     </div>
   );  
 }

@@ -5,10 +5,10 @@ import './ImageSlider.css';
 const ImageSlider = (props) => {
     var [pageNum,setPageNum] = useState(1);
     return (
-        <React.Fragment className="_container">
+        <React.Fragment>
             {props.image[1]==0?null:
-                <div className="img_container" >
-                    <img className="img_" src={process.env.PUBLIC_URL + props.image[0] + pageNum +props.image[2]}/>
+                <div className="imageslider_container" >
+                    <img className="img_container" src={process.env.PUBLIC_URL + props.image[0] + pageNum +props.image[2]}/>
                     <div className="img_button_position">
                         <button className ="left_arrow_button arrow_button" onClick={()=> {
                             if(pageNum>1) { setPageNum(parseInt(pageNum)-1); }}}>  &lt; </button>

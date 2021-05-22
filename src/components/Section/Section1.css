@@ -1,0 +1,32 @@
+.section1_container {
+  margin: auto;
+  background: red;
+}
+.section1_frame {
+  margin: auto;
+  min-height: 400px;
+  background: orange;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (min-width: 1024px) {
+  .section1_container {
+    width: 90vw;
+    min-width: 1024px;
+    max-width: 1400px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .section1_container {
+    width: 90vw;
+    min-width: 768px;
+    max-width: 1023px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section1_container {
+    width: 320px;
+  }
+}

@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
+a {
+  text-decoration: none;
+  color: red;
+}
+.page_container {
+  min-height: 500px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  background: purple;
+  line-height: 150%;
+}
+.title {
+  font-size: 50px;
+  color: white;
+  line-height: 210%;
+}
+
+.stitle {
+  font-size: 40px;
+  font-weight: 800;
+  color: skyblue;
+  line-height: 210%;
+}

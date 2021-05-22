@@ -1,11 +1,51 @@
 .nav_container {
   height: 80px;
-  margin: 20px 0px;
+  margin: 20px auto;
   background: red;
+  max-width: 1400px;
 }
+/* 미디어 쿼리 */
 .nav_frame {
+  height: 80px;
+  margin: auto;
+  background: orange;
   position: relative;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
+.logo_container {
+  width: 240px;
+  height: 80px;
+  float: left;
+  background: yellow;
+}
+.logo_container > div {
+  width: 236px;
+  height: 76px;
+  margin: 2px;
+  background: green;
+}
+@media screen and (min-width: 1024px) {
+  .nav_frame {
+    min-width: 1024px;
+    max-width: 1400px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .nav_frame {
+    min-width: 768px;
+    max-width: 1023px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .nav_frame {
+    width: 440px;
+  }
+  .logo_container {
+    width: 0px;
+  }
+}
+
 /* 체크박스 */
 .nav_frame > input[type="checkbox"] {
   display: none;
@@ -27,7 +67,7 @@
   top: 20px;
   left: 20px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 5;
   background: green;
 }
 .menuicon_container > label > span {
@@ -70,18 +110,6 @@ input[type="checkbox"]:checked
   transform: translateY(-50%) rotate(135deg);
 }
 /* 로고 공간 */
-.logo_container {
-  width: 240px;
-  height: 80px;
-  float: left;
-  background: yellow;
-}
-.logo_container > div {
-  width: 236px;
-  height: 76px;
-  margin: 2px;
-  background: green;
-}
 .nav_menu_container {
   width: 320px;
   height: 80px;
@@ -99,6 +127,7 @@ input[type="checkbox"]:checked
 /* 사이드 메뉴 목록 공간 */
 .side_menu_container {
   display: none;
+  z-index: 2;
 }
 input[type="checkbox"]:checked ~ .side_menu_container {
   width: 320px;
@@ -106,30 +135,4 @@ input[type="checkbox"]:checked ~ .side_menu_container {
   background: blue;
   position: absolute;
   display: block;
-}
-/* 미디어 쿼리 */
-.nav_frame {
-  height: 80px;
-  margin: auto;
-  background: orange;
-}
-@media screen and (min-width: 1024px) {
-  .nav_frame {
-    width: 80vw;
-    min-width: 1024px;
-    max-width: 1400px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .nav_frame {
-    width: 80vw;
-    max-width: 1023px;
-    min-width: 767px;
-  }
-}
-@media screen and (max-width: 767px) {
-  .nav_frame {
-    width: 80vw;
-    max-width: 320px;
-  }
 }
