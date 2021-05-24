@@ -1,0 +1,19 @@
+.copybutton {
+  border: none;
+  background: #aeaeae;
+  border-radius: 10px;
+  margin: 2px 10px 2px 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  outline: none;
+  display: inline-block;
+  font-size: 15px;
+}
+.copybutton:active {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  background: white;
+}
+@media screen and (max-width: 767px) {
+  .copybutton {
+    display: none;
+  }
+}

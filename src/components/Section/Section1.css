@@ -1,6 +1,9 @@
 .section1_container {
   margin: auto;
   background: red;
+  max-width: 1400px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .section1_frame {
   margin: auto;
@@ -11,22 +14,23 @@
 
 @media screen and (min-width: 1024px) {
   .section1_container {
-    width: 90vw;
     min-width: 1024px;
     max-width: 1400px;
+    background: yellow;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .section1_container {
-    width: 90vw;
     min-width: 768px;
     max-width: 1023px;
+    background: yellow;
   }
 }
 
 @media screen and (max-width: 767px) {
   .section1_container {
-    width: 320px;
+    width: 440px;
+    background: yellow;
   }
 }
