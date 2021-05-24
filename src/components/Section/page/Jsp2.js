@@ -198,15 +198,16 @@ public class Test2 {
         <p> JSP주석 : &lt;%-- --%&gt; </p>
         <p> Java주석 : // , /**/ </p>
         <br />
-        <p> &lt;%@ isErrorPage="true" %&gt; 에러가 났을때 발생하는 페이지 </p>
-        <p> &lt;%@ errorPage=".jsp" %&gt; 에러가 났을때 발생하는 이동되는 페이지 </p>
-        <p> &lt;%@ include file=".jsp" %&gt; 다른 파일 불러오기 </p>
+        <p> &lt;%@ include file=".jsp" %&gt; 다른 파일(만들어둔 JSP,HTMl) 한번에 불러오기 - 스프링프레임워크가 있어 사용거의안함</p>
         <p>
-          &lt;jsp:include page=".jsp" &gt; &lt;/jsp:include&gt; 요청전달에 사용, 다른페이지를 현재페이지에 포함, 실행시점에 해당파일 호출 그 결과를
-          포함 ,제어권이 현재 페이지
+          &lt;jsp:include page=".jsp" &gt; &lt;/jsp:include&gt; , include 액션(위에 다른 파일을 불러오는 include와는 다름) include 액션 실행시점에
+          해당파일 호출하고 컴파일 , 파라미터 등 요청전달에 사용 ,다른 페이지로 이동했다가 다시 돌아옴
         </p>
-        <p> &lt;jsp:param value="" name="" @등="" %&gt; 매개변수로 받아옴 </p>
-        <p> &lt;jsp:forward page=".jsp" &gt; &lt;/jsp:forward&gt; 제어권이 다른 페이지 </p>
+        <p> &lt;jsp:param name="" value="" @등="" %&gt; key-value 으로 파라미터를 보냄 </p>
+        <p> &lt;%= request.getParameter("num1") %&gt; 으로 파라미터를 받아옴 </p>
+        <p> &lt;jsp:forward page=".jsp" &gt; &lt;/jsp:forward&gt; 파라미터 등 요청전달에 사용, 다른 페이지로 이동해버림(include액션과 다름) </p>
+        {/* <p> &lt;%@ isErrorPage="true" %&gt; 에러가 났을때 발생하는 페이지 </p> */}
+        {/* <p> &lt;%@ errorPage=".jsp" %&gt; 에러가 났을때 발생하는 이동되는 페이지 </p>*/}
         <br />
         <p> JSP 내장객체 </p>
         <p>request, resposne, pageContext, session, application, page, out, config</p>
@@ -229,9 +230,7 @@ public class Test2 {
 	<%= new Date() %> <!--  자바 문법 -->
 </body>
 </html>'
-          content="(1) JSP 코드 복사">
-          {" "}
-        </CopyButton>
+          content="(1) JSP 코드 복사"></CopyButton>
         <CopyButton
           text='<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.Date"%>
@@ -257,12 +256,95 @@ public class Test2 {
 </body>
 </html>'
           content="(3) JSP 코드 복사"></CopyButton>
-        <ImageSlider image={(arr = ["/img/jsp2/jsp2_7_", "4", ".png"])}> </ImageSlider> <br />
+        <CopyButton
+          text='<%@ page language="java" contentType="text/html; 
+charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<!--  page지시어 page에 대한 형식 정보를 가지고 있음 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p> 페이지1 </p>
+	<jsp:include page="NewFile1.jsp"> 
+		<jsp:param name="num1" value="123" />
+		<jsp:param name="num2" value="456" />
+	</jsp:include>
+</body>
+</html>'
+          content="(7) NewFile.jsp 코드 복사">
+          {" "}
+        </CopyButton>
+        <CopyButton
+          text='<%@ page language="java" contentType="text/html; 
+charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p> 페이지2 </p>
+	<%= request.getParameter("num1") %> <br/>
+	<%= request.getParameter("num2") %> <br/>
+</body>
+</html>'
+          content="(7) NewFile1.jsp 코드 복사"></CopyButton>
+        <CopyButton
+          text='<%@ page language="java" contentType="text/html; 
+charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<!--  page지시어 page에 대한 형식 정보를 가지고 있음 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p> 페이지1 </p>
+	<jsp:forward page="NewFile1.jsp"> 
+		<jsp:param name="num1" value="123" />
+		<jsp:param name="num2" value="456" />
+	</jsp:forward>
+</body>
+</html>'
+          content="(9) NewFile.jsp 코드 복사"></CopyButton>
+        <CopyButton
+          text='<%@ page language="java" contentType="text/html; 
+charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p> 페이지2 </p>
+	<%= request.getParameter("num1") %> <br/>
+	<%= request.getParameter("num2") %> <br/>
+</body>
+</html>'
+          content="(9) NewFile1.jsp 코드 복사"></CopyButton>
+        {/* <CopyButton text='' content="(7) NewFile1.jsp 코드 복사"> </CopyButton>*/}
+        <ImageSlider image={(arr = ["/img/jsp2/jsp2_7_", "8", ".png"])}> </ImageSlider> <br />
       </div>
-      <br /> <p className="stitle"> (8) Servlet 이용해보기</p>
+      <br /> <p className="stitle"> (8) Servlet 이용해보기 + Servlet 생명주기</p>
       <div className="content_container">
         <p>✔ Servlet과 JSP문법의 큰 차이는 없고 HTML코드를 작성하는 부분만 약간 다르다.</p>
         <p>✔ Ctrl + Shift + O 하면 import가 자동으로 된다.</p>
+        <p>✔ Servlet은 생명주기가 존재한다. Init() - Service() - Destroy() </p>
+        <p>✔ Servlet 공간에 Servlet 객체는 한개만 존재하고 똑같은 객체는 만들지 않는다. </p>
+        <p>1. 사용자가 처음으로 요청을 하면 init()과 service() 메소드를 실행한다. - 메모리에 객체가 없으므로 생성하고 service() 실행</p>
+        <p>2. 사용자가 다시 요청을 하면 service() 메소드만 실행을 한다 - 이미 객체가 메모리상에 올라가 있으므로 새롭게 생성하지 않음</p>
+        <p>3. 사용자가 servlet 코드를 수정을 하고 저장을 하면 destroy()가 실행이 된다. - 다른 객체가 되었으므로 기존에 있던 객체를 삭제</p>
+        {/* 생명주기 설명 필요 */}
         <CopyButton
           text='package day2;
 
@@ -308,21 +390,61 @@ public class Test3 extends HttpServlet {
           리액트 컴포넌트가 몇천,몇만개로 구성이 되어있다고 한다. 백엔드를 공부하고 싶지만 리액트에서 컴포넌트를 사용하고 그 매력에 빠져서
           공부중이다라고 한다면 얼마나 좋은지 대답이 될 것 같다.
         </p>
-        <ImageSlider image={(arr = ["/img/jsp2/jsp2_9_", "4", ".png"])}> </ImageSlider> <br />
+        <p> &gt;%=URLEncode.eccode("한국말","UTF-8") %&lt; 한국어 출력방법.. + import="java.net.URLEncode" 추가.. </p>
+        <CopyButton
+          text='<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%-- 다른 파일에 클래스를 불러와서 사용이 가능 --%>
+<jsp:useBean id="bean1" class="day2.Test4"/> 
+<%-- bean1이라는 객체에 모든 프로퍼티를 이용하겠다. --%>
+<jsp:setProperty property="*" name="bean1"/> 
+<% bean1.test(); %> <%-- bean1의 메소드를 사용하겠다고 선언 --%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1> 테스트 </h1>
+	<form Method="POST">
+		<input type="text" name="num1">
+	</form>
+	<p> <jsp:getProperty name="bean1" property="result" /> </p>
+</body>
+</html>'
+          content="(2) javabean.jsp 코드 복사"></CopyButton>
+        <CopyButton
+          text="package day2;
+
+public class Test4 {
+
+	int num,num1,result=0;
+	
+	public void setNum1(int num1) {
+		this.num1 = num1;
+	}
+
+	public int getResult() {
+		return result;
+	}
+
+	public void test() {
+		int num = 10;
+		result = num+num1;
+	}
+
+
+}"
+          content="(2)Test4.java"></CopyButton>
+        {/* <CopyButton text='' content=""> </CopyButton>*/}
+        <ImageSlider image={(arr = ["/img/jsp2/jsp2_9_", "3", ".png"])}> </ImageSlider> <br />
       </div>
-      <br /> <p className="stitle"> (10) Servlet 생명주기 </p>
-      <div className="content_container">
-        <p>✔ Servlet은 생명주기가 존재한다. Init() - Service() - Destroy() </p>
-        <p>✔ Servlet 공간에 Servlet 객체는 한개만 존재하고 똑같은 객체는 만들지 않는다. </p>
-        <p>1. 사용자가 처음으로 요청을 하면 init()과 service() 메소드를 실행한다. - 메모리에 객체가 없으므로 생성하고 service() 실행</p>
-        <p>2. 사용자가 다시 요청을 하면 service() 메소드만 실행을 한다 - 이미 객체가 메모리상에 올라가 있으므로 새롭게 생성하지 않음</p>
-        <p>3. 사용자가 servlet 코드를 수정을 하고 저장을 하면 destroy()가 실행이 된다. - 다른 객체가 되었으므로 기존에 있던 객체를 삭제</p>
-      </div>
-      <ImageSlider image={(arr = ["/img/jsp2/jsp2_10_", "0", ".png"])}> </ImageSlider> <br />
-      {/* <br/> <p className="stitle"> 3) Nodejs </p> */}
+      <br /> <p className="stitle"> (10) </p>
+      {/* <br/> <p className="stitle"> 3) Nodejs </p>*/}
       {/* div.content_container>(p>{$. })* */}
-      {/* <CopyButton text='' content=""> </CopyButton>  */}
-      {/* <ImageSlider image={(arr = ["/img/jsp2/jsp2_10_", "0", ".png"])} ></ImageSlider> */}
+      {/* <CopyButton text='' content=""> </CopyButton>*/}
+      {/* <ImageSlider image={(arr = ["/img/jsp2/jsp2_10_", "0", ".png"])} ></ImageSlider>*/}
     </div>
   ) //리턴꺼고
 } //jsp2 컴포넌트꺼 자동으로

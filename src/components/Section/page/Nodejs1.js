@@ -1,9 +1,9 @@
-import React from "react";
-import ImageSlider from "./ImageSlider.js";
-import CopyButton from "./CopyButton.js";
-import "./page.css";
+import React from "react"
+import ImageSlider from "./ImageSlider.js"
+import CopyButton from "./CopyButton.js"
+import "./page.css"
 const Nodejs1 = () => {
-  var arr = [];
+  var arr = []
 
   return (
     <div className="page_container">
@@ -16,53 +16,30 @@ const Nodejs1 = () => {
         <p>3. 프론트엔드 분야에서 백엔드 분야까지 제어를 할 수 있다.(장점) </p>
         <p>4. V8엔진(구글엔진) 위에서 작동하는 이벤트 처리 I/O 프레임 워크</p>
         <p>5. 노드 JS는 비동기 프로그래밍이다.(장점) </p>
-        <p>
-          6. 자바스크립트를 컴파일하고 실행할 수 있는 프레임 워크(기본 모듈이
-          자바스크립트)
-        </p>
-        <p>
-          7. 웹서버 역할을 하는 내장 라이브러리가 존재하고 NPM 패키지가 포함 되어있다.
-        </p>
+        <p>6. 자바스크립트를 컴파일하고 실행할 수 있는 프레임 워크(기본 모듈이 자바스크립트)</p>
+        <p>7. 웹서버 역할을 하는 내장 라이브러리가 존재하고 NPM 패키지가 포함 되어있다.</p>
       </div>
       <br /> <p className="stitle"> (2) Nodejs 다운받기 </p>
       <div className="content_container">
         <a href="https://nodejs.org/en/" target="_blank">
           노드 JS 설치 👈
         </a>
-        <p>
-          LTS버전으로 다운 받는것을 추천, 최신버전은 문제가 존재할 수도 있으므로 비추천
-        </p>
+        <p>LTS버전으로 다운 받는것을 추천, 최신버전은 문제가 존재할 수도 있으므로 비추천</p>
         <p> cmd창 &gt; node -v 입력 &gt; 버전이 나오면 잘 설치가 됨 </p>
         <p> cmd창 &gt; npm -v 입력 &gt; 버전이 나오면 잘 설치가 됨 </p>
-        <p>
-          package.json : 데이터베이스에 있는 언어를 문서로 작성해 놓은 파일 , nodejs를
-          실행하기전에 필요한 파일을 받거나 설정된 문서 파일
-        </p>
+        <p>package.json : 데이터베이스에 있는 언어를 문서로 작성해 놓은 파일 , nodejs를 실행하기전에 필요한 파일을 받거나 설정된 문서 파일</p>
       </div>
       <br /> <p className="stitle"> (3) Nodejs 시작하기 </p>
       <div className="content_container">
-        <p>
-          1. VScode 터미널에서 npm init -y 입력 (package.json 설정없이 간단하게 만드는
-          방법)
-        </p>
-        <p>
-          2. 파일이름.js 파일을 하나 만들고 코드를 작성 (ex) console.log('node.js의 시작')
-        </p>
+        <p>1. VScode 터미널에서 npm init -y 입력 (package.json 설정없이 간단하게 만드는 방법)</p>
+        <p>2. 파일이름.js 파일을 하나 만들고 코드를 작성 (ex) console.log('node.js의 시작')</p>
         <p>3. 터미널에 node 파일이름.js 입력하면 작동 </p>
-        <p>
-          하지만 위에 방식으로 하면 코드를 수정할 때마다 서버를 껐다가 켜야하는 단점이
-          존재
-        </p>
+        <p>하지만 위에 방식으로 하면 코드를 수정할 때마다 서버를 껐다가 켜야하는 단점이 존재</p>
         <p> 터미널에 npm install --save-dev nodemon 입력 </p>
         <p>설치후 package.json 파일에 보면 아래쪽에 설치된것을 확인할 수 있다.</p>
-        <p>
-          package.json 파일에서 "scripts" 쪽에 "start:nodemon 실행하려는JS파일명.js", 입력
-        </p>
+        <p>package.json 파일에서 "scripts" 쪽에 "start:nodemon 실행하려는JS파일명.js", 입력</p>
         <p>후에 npm run start하면 실행하려는파일명.js 파일이 시작되는 것을 볼 수 있다.</p>
-        <p>
-          단점 : nodemon도 프로젝트가 매번 바뀌면 package.json 내용을 바꾸어주어야 하는
-          단점이 존재한다.
-        </p>
+        <p>단점 : nodemon도 프로젝트가 매번 바뀌면 package.json 내용을 바꾸어주어야 하는 단점이 존재한다.</p>
         <p> </p>
       </div>
       <br /> <p className="stitle"> (4) 파일처리와 관련된 fs모듈 </p>
@@ -76,13 +53,8 @@ const Nodejs1 = () => {
         <p> ------ </p>
         <p>동기식 : 실행시킨 프로그램이 끝날떄 까지 기다렸다가 </p>
         <p>비동기식 : 이전 단계의 프로그램과 상관없이 계속 진행하는 방식</p>
-        <p>
-          1. 동기 방식과 비동기 방식을 실행하면 동기 방식을 먼저 실행하고 비동기 방식을
-          실행한다.{" "}
-        </p>
-        <p>
-          2. 동기 방식에서 파일이 없어 에러를 발생하면 프로그램이 종료되므로 예외처리 필요{" "}
-        </p>
+        <p>1. 동기 방식과 비동기 방식을 실행하면 동기 방식을 먼저 실행하고 비동기 방식을 실행한다. </p>
+        <p>2. 동기 방식에서 파일이 없어 에러를 발생하면 프로그램이 종료되므로 예외처리 필요 </p>
         <p> ------ </p>
       </div>
       <br /> <p className="stitle"> (5) 파일읽기 메소드 fs모듈 </p>
@@ -91,13 +63,11 @@ const Nodejs1 = () => {
           text="파일 읽는 테스트 용도입니다.
           읽힌다면 성공
           노드 JS 시작..."
-          content="(2) 코드 복사"
-        ></CopyButton>
+          content="(2) 코드 복사"></CopyButton>
         <CopyButton
           text="const fs = require('fs'); const data = fs.readFileSync('text1.txt');
               console.log(`동기식으로 파일 읽기: ${data}`);"
-          content="(3) 코드 복사"
-        ></CopyButton>
+          content="(3) 코드 복사"></CopyButton>
         <CopyButton
           text='const fs = require("fs");
           fs.readFile("text1.txt", "utf-8", (err, data) => {
@@ -107,8 +77,7 @@ const Nodejs1 = () => {
               console.log(`비동기 방식 : ${data}`);
             }
           });'
-          content="(5) 코드 복사"
-        ></CopyButton>
+          content="(5) 코드 복사"></CopyButton>
         <CopyButton
           text='const fs = require("fs");
           const data = fs.readFileSync("text1.txt");
@@ -122,8 +91,7 @@ const Nodejs1 = () => {
           });
           const data2 = fs.readFileSync("text1.txt");
           console.log(`동기식으로 파일 읽기: ${data2}`);'
-          content="(7) 코드 복사"
-        ></CopyButton>
+          content="(7) 코드 복사"></CopyButton>
         <CopyButton
           text='const fs = require("fs");
         try {
@@ -132,11 +100,8 @@ const Nodejs1 = () => {
           console.log("읽어올 파일이 없습니다.");
         }
         console.log("파일 읽기...");'
-          content="(9) 코드 복사"
-        ></CopyButton>
-        <ImageSlider
-          image={(arr = ["/img/nodejs1/nodejs1_5_", "10", ".png"])}
-        ></ImageSlider>
+          content="(9) 코드 복사"></CopyButton>
+        <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_5_", "10", ".png"])}></ImageSlider>
         <br />
         <p> </p>
         <p> </p>
@@ -145,30 +110,17 @@ const Nodejs1 = () => {
       <br /> <p className="stitle"> (6) 파일쓰기 메소드 fs모듈 </p>
       <div className="content_container">
         <CopyButton text="" content="(4) 코드 복사"></CopyButton>
-        <ImageSlider
-          image={(arr = ["/img/nodejs1/nodejs1_6_", "5", ".png"])}
-        ></ImageSlider>
+        <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_6_", "5", ".png"])}></ImageSlider>
       </div>
       <br /> <p className="stitle"> (7) Nodejs 이벤트 </p>
       <div className="content_container">
-        <p>
-          노드JS를 위에서 V8엔진(구글엔진) 위에서 작동하는 이벤트 처리 I/O 프레임 워크라고
-          말한적이 있다.{" "}
-        </p>
-        <p>
-          노드JS는 이벤트가 발생하는 것을 기다려 콜백함수를 호출하여 작동하는 경우가 많다{" "}
-        </p>
+        <p>노드JS를 위에서 V8엔진(구글엔진) 위에서 작동하는 이벤트 처리 I/O 프레임 워크라고 말한적이 있다. </p>
+        <p>노드JS는 이벤트가 발생하는 것을 기다려 콜백함수를 호출하여 작동하는 경우가 많다 </p>
         <p> eventEmitter 객체는 이벤트 관련 메소드를 사용할 수 있는 기능 </p>
         <p>선언 : const 이름 = new events.EventEmitter(); </p>
         <p>사용 : 이름.메소드('이벤트명') </p>
-        <p>
-          실행순서는 on(연결되었다고 인식) =&gt; emit(이벤트 발생) =&gt; 이벤트에 맞는
-          함수실행{" "}
-        </p>
-        <p>
-          객체.on('이벤트명','함수명') : 이벤트가 발생하면 이벤트핸들러(함수)를
-          실행시킨다.
-        </p>
+        <p>실행순서는 on(연결되었다고 인식) =&gt; emit(이벤트 발생) =&gt; 이벤트에 맞는 함수실행 </p>
+        <p>객체.on('이벤트명','함수명') : 이벤트가 발생하면 이벤트핸들러(함수)를 실행시킨다.</p>
         <p>객체.emit('이벤트명') : 이벤트를 강제로 발생시킴 </p>
         <CopyButton
           text='const events = require("events");
@@ -183,20 +135,15 @@ const Nodejs1 = () => {
         });
         eventEmitter.emit("connection");
         console.log("프로그램 종료!");'
-          content="(1) 코드 복사"
-        ></CopyButton>
-        <ImageSlider
-          image={(arr = ["/img/nodejs1/nodejs1_7_", "2", ".png"])}
-        ></ImageSlider>
+          content="(1) 코드 복사"></CopyButton>
+        <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_7_", "2", ".png"])}></ImageSlider>
       </div>
       <br /> <p className="stitle"> (8) 프로세스(시스템) 이벤트 </p>
       <div className="content_container">
         <p> 패스 </p>
 
         <CopyButton text="" content=""></CopyButton>
-        <ImageSlider
-          image={(arr = ["/img/nodejs1/nodejs1_8_", "0", ".png"])}
-        ></ImageSlider>
+        <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_8_", "0", ".png"])}></ImageSlider>
       </div>
       <br /> <p className="stitle"> (9) 웹서버 구축하기 </p>
       <div className="content_container">
@@ -232,8 +179,7 @@ const Nodejs1 = () => {
             .listen(3000, () => {
               console.log("3000번 포트 서버 실행");
             });'
-          content="(1) JS 코드 복사"
-        ></CopyButton>
+          content="(1) JS 코드 복사"></CopyButton>
         <CopyButton
           text="<!DOCTYPE html>
         <html lang='UTF-8'>
@@ -245,11 +191,8 @@ const Nodejs1 = () => {
             작동이 잘 됩니다............
         </body>
         </html>"
-          content="(2) HTML 코드 복사"
-        ></CopyButton>
-        <ImageSlider
-          image={(arr = ["/img/nodejs1/nodejs1_9_", "3", ".png"])}
-        ></ImageSlider>
+          content="(2) HTML 코드 복사"></CopyButton>
+        <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_9_", "3", ".png"])}></ImageSlider>
       </div>
       <br /> <p className="stitle"> (10) express모듈로 웹서버 구축하기(get방식) </p>
       <div className="content_container">
@@ -266,10 +209,7 @@ const Nodejs1 = () => {
         <p> console.dir(req.headre) : 객체를 그대로 출력함 </p>
         <p> req.header('User-Agent') : 유저의 OS정보를 출력가능 </p>
         <p> const 변수명 = req.query.name명; : get방식일 때 사용</p>
-        <p>
-          const 변수명 = req.body.name명; : post방식일 때 사용(body-parser 파라미터 확인시
-          모듈 필요)
-        </p>
+        <p>const 변수명 = req.body.name명; : post방식일 때 사용(body-parser 파라미터 확인시 모듈 필요)</p>
         <p></p>
 
         <CopyButton
@@ -296,11 +236,8 @@ app.use((req, res) => {
 app.listen(port, () => {
   console.log("${port} 포트로 서버 실행중...");
 });'
-          content="(1) JS 코드 복사"
-        ></CopyButton>
-        <ImageSlider
-          image={(arr = ["/img/nodejs1/nodejs1_10_", "3", ".png"])}
-        ></ImageSlider>
+          content="(1) JS 코드 복사"></CopyButton>
+        <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_10_", "3", ".png"])}></ImageSlider>
 
         <CopyButton
           text='const express = require("express");
@@ -326,13 +263,10 @@ app.use((req, res) => {
 app.listen(port, () => {
   console.log("${port} 포트로 서버 실행중...");
 });'
-          content="(1) JS 코드 복사"
-        ></CopyButton>
-        <ImageSlider
-          image={(arr = ["/img/nodejs1/nodejs1_10_", "3", ".png"])}
-        ></ImageSlider>
+          content="(1) JS 코드 복사"></CopyButton>
+        <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_10_", "3", ".png"])}></ImageSlider>
       </div>
-      <br /> <p className="stitle"> (11)) express모듈로 웹서버 구축하기(post방식) </p>
+      <br /> <p className="stitle"> (11) express모듈로 웹서버 구축하기(post방식) </p>
       <div className="content_container">
         <p> 테스트 하려면 POST방식으로 보내야 하는데 이것을 쉽게 해주는 Postman을 다운</p>
         <a href="https://www.postman.com/downloads/" target="_blank">
@@ -341,24 +275,22 @@ app.listen(port, () => {
         <p> Postman 회원가입 하고 로그인 하기</p>
         <p> </p>
         <p>
-          bodyParser.urlencoded() : 중첩된 객체표현을 허용할지 여부(qs,query-string
-          2가지URL파싱방식에서 겹치는 객체가 존재하므로 qs를 막음 extended:false로 사용)
+          bodyParser.urlencoded() : 중첩된 객체표현을 허용할지 여부(qs,query-string 2가지URL파싱방식에서 겹치는 객체가 존재하므로 qs를 막음
+          extended:false로 사용)
         </p>
         <p> </p>
         <p> </p>
         <p> </p>
         <p> </p>
         <CopyButton text="" content=""></CopyButton>
-        <ImageSlider
-          image={(arr = ["/img/nodejs1/nodejs1_11_", "0", ".png"])}
-        ></ImageSlider>
+        <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_11_", "0", ".png"])}></ImageSlider>
       </div>
       {/* <br/> <p className="stitle"> 3) Nodejs </p> */}
       {/* div.content_container>(p>{$. })* */}
       {/* <CopyButton text="" content=""> </CopyButton>  */}
       {/* <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_4_", "8", ".png"])}  ></ImageSlider> */}
     </div>
-  );
-};
+  )
+}
 
-export default Nodejs1;
+export default Nodejs1

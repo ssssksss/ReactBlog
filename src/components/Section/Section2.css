@@ -2,7 +2,6 @@
   margin: auto;
   background: red;
   max-width: 1400px;
-  padding: 0 20px;
   box-sizing: border-box;
 }
 .section2_frame {
@@ -12,7 +11,6 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .area1_container {
-  padding: 0 10px;
   box-sizing: border-box;
   background: green;
 }
@@ -49,7 +47,7 @@
     background: yellow;
   }
   .area2_container {
-    width: 0px;
+    width: 0;
   }
 }
 
