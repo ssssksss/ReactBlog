@@ -5,6 +5,10 @@
   margin-left: 10px;
   cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+}
 .menu-item:hover {
   color: white;
   font-weight: 800;

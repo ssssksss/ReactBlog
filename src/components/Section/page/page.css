@@ -3,15 +3,20 @@
   text-decoration: none;
   color: red;
 }
+p {
+  line-height: 2vw;
+  min-height: 20px;
+}
 .page_container {
   min-height: 500px;
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 1vw;
   font-weight: 600;
   background: #9b00a3;
   line-height: 150%;
   padding-bottom: 40px;
+  font-size: 1.2vw;
 }
+
 .title {
   font-size: 3vw;
   color: white;
