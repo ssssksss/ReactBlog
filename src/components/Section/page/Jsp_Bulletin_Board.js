@@ -33,7 +33,7 @@ const Jsp_Bulletin_Board = () => {
       </div>
       <br /> <p className="stitle"> (2) 프론트 작업하기 </p>
       <div className="content_container">
-        <p>간단하게 Nav바에 홈, 게시판, 로그인, 회원가입을 만들기 후에 2차수정</p>
+        <p>간단하게 Nav바에 홈, 게시판, 로그인, 회원가입을 만들기 후에 0차수정</p>
         <p>1. main.jsp (처음 화면) </p>
         <p>2. login.jsp (로그인 화면)</p>
         <p>3. join.jsp (회원가입 화면</p>
@@ -375,12 +375,17 @@ const Jsp_Bulletin_Board = () => {
         <CopyButton text="" content=""></CopyButton>
         <ImageSlider image={(arr = ["/img/Jsp_Bulletin_Board/Jsp_Bulletin_Board_2_", "12", ".png"])}></ImageSlider>
       </div>
-      <br /> <p className="stitle"> (3) 로그인 작업하기 </p>
+      <br /> <p className="stitle"> (3) 회원가입,로그인 작업하기 </p>
       <div className="content_container">
-        <p>1. </p>
-        <p>2. </p>
-        <p>3. </p>
+        <p> MVC, DAO, DTO 형태 잡아두기 0차 수정 </p>
+        <p>1. 이클립스에서 UserDAO, UserDTO 형식 만들어두기 </p>
+        <p>2. DB(오라클)에 유저 테이블 생성 </p>
+        <p>3. 이클립스에서 DB테이블에 값 저장해보기(작동확인)</p>
         <p>4. </p>
+        <p>5. </p>
+        <p>6. </p>
+        <CopyButton text="" content=""></CopyButton>
+        <CopyButton text="" content=""></CopyButton>
         <CopyButton text="" content=""></CopyButton>
         <ImageSlider image={(arr = ["/img/Jsp_Bulletin_Board/Jsp_Bulletin_Board_", "0", ".png"])}></ImageSlider>
       </div>
@@ -390,9 +395,7 @@ const Jsp_Bulletin_Board = () => {
         <p>2. </p>
         <p>3. </p>
         <p>4. </p>
-        <CopyButton text="" content="">
-          {" "}
-        </CopyButton>
+        <CopyButton text="" content=""></CopyButton>
         <ImageSlider image={(arr = ["/img/Jsp_Bulletin_Board/Jsp_Bulletin_Board_", "0", ".png"])}></ImageSlider>
       </div>
       {/* <br /> <p className="stitle"> (1) 프론트 작업하기 </p>

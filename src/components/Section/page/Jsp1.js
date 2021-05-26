@@ -123,7 +123,7 @@ public class Test2 {
     }
 }
 }'
-          content="(16) JSP 코드 복사"></CopyButton>
+          content="(16) .java 코드 복사"></CopyButton>
         <CopyButton
           text='package day2;
 
@@ -158,7 +158,7 @@ public class Test2 {
     }
 }'
           content="(19) JSP 코드 복사"></CopyButton>
-        <ImageSlider image={(arr = ["/img/jsp2/jsp2_4_", "20", ".png"])}></ImageSlider>
+        <ImageSlider image={(arr = ["/img/jsp2/jsp2_4_", "19", ".png"])}></ImageSlider>
         <br /> <p> ------------------------------------- </p>
         <h1> 이클립스 와 MySQL 연결 </h1>
         <a href="https://dev.mysql.com/downloads/" target="blank">
@@ -445,7 +445,17 @@ charset=UTF-8"
           리액트 컴포넌트가 몇천,몇만개로 구성이 되어있다고 한다. 백엔드를 공부하고 싶지만 리액트에서 컴포넌트를 사용하고 그 매력에 빠져서
           공부중이다라고 한다면 얼마나 좋은지 대답이 될 것 같다.
         </p>
-        <p> &gt;%=URLEncode.eccode("한국말","UTF-8") %&lt; 한국어 출력방법.. + import="java.net.URLEncode" 추가.. </p>
+        <p> 웹상에서 자바 변수를 따로 사용하지 않고 한번에 묶어서 클래스 필드(변수)를 사용하게 하는것</p>
+        <p> useBean(클래스객체를 생성)</p>
+        <p> 선언(범위,공백가능) : &lt; page, &lt; request, &lt; session, &lt; application </p>
+        <p> 사용 : &lt;jsp:useBean id="a" type="A" class="B" scope=""&gt; //A a = new B()</p>
+        <p> &lt;jsp:setProperty name="a" property="값,*" value="값"&gt; </p>
+        <p> &lt;jsp:setProperty name="a" property="값,*" param=페이지의파라미터"&gt; </p>
+        <p> &lt;jsp:setProperty name="a" property="값,*" &gt; </p>
+        <p> &lt;jsp:setProperty name="a" property="값,*" &gt; </p>
+        <p> &lt;/jsp:useBean&gt; </p>
+        <p> 사용 &lt;jsp:getProperty name="a" property="값,*" /&gt; </p>
+        <p> &lt;%=URLEncode.eccode("한국말","UTF-8") %&gt; 한국어 출력방법.. + import="java.net.URLEncode" 추가.. </p>
         <CopyButton
           text='<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
