@@ -317,6 +317,18 @@ public class Test3 extends HttpServlet {
         <p> 요청한 받은값 인코딩: request.getParameterValues("배열일떄");</p>
         <p> 요청받은 메소드 확인 request.getMethod()</p>
         <p> 요청받은 프로토콜 확인 request.getProtocol()</p>
+        <p> 세션 관련 </p>
+        <p> ServletContext application = request.getServletContext(); </p>
+        <p> HttpSession session = request.getSession(); </p>
+        <p> Cookie 쿠키이름 = new Cookie("key",name); </p>
+        <p> response.addCookie(쿠키이름); </p>
+        {/* 경로 안에 있는 쿠기만 가져온다.쿠키의 사용 범위*/}
+        <p> 쿠키이름.setPath("/") </p>
+        {/* 사용자가 쿠키들을 보내면 서버 쪽에서 쿠키를 받아오는 배열 */}
+        <p> Cookie[] cookies = request.getCookies(); </p>
+        <p> 자료형 이름 = (자료형)session.getAttribute("파라미터"); </p>
+        {/* 쿠키의 삭제되는 시간 */}
+        <p>쿠키이름.setMaxAge(24*60*60) </p>
         <CopyButton
           text='<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.Date"%>
