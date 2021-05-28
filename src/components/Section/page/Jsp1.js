@@ -311,7 +311,7 @@ public class Test3 extends HttpServlet {
         {/* <p> &lt;%@ errorPage=".jsp" %&gt; 에러가 났을때 발생하는 이동되는 페이지 </p>*/}
         <br />
         <p> JSP 내장객체 </p>
-        <p>request, resposne, pageContext, session, application, page, out, config</p>
+        <p>request, resposne, pageContext, session, application, page, out, config _jspx_out, _jspx_page_context</p>
         <p> HTML에서 파라미터 받아오는 법: request.getParameter("name값"); </p>
         <p> 요청한 받은값 인코딩: request.setCharacterEncoding("UTF-8");</p>
         <p> 요청한 받은값 인코딩: request.getParameterValues("배열일떄");</p>
@@ -446,7 +446,7 @@ charset=UTF-8"
 </html>'
           content="(9) NewFile1.jsp 코드 복사"></CopyButton>
         {/* <CopyButton text='' content="(7) NewFile1.jsp 코드 복사"> </CopyButton>*/}
-        <ImageSlider image={(arr = ["/img/jsp2/jsp2_8_", "10", ".png"])}> </ImageSlider> <br />
+        <ImageSlider image={(arr = ["/img/jsp2/jsp2_8_", "15", ".png"])}> </ImageSlider> <br />
       </div>
       <br /> <p className="stitle"> (9) JavaBean 이용 </p>
       <div className="content_container">
