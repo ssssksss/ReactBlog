@@ -27,7 +27,10 @@ const Nodejs1 = () => {
         <p>LTS버전으로 다운 받는것을 추천, 최신버전은 문제가 존재할 수도 있으므로 비추천</p>
         <p> cmd창 &gt; node -v 입력 &gt; 버전이 나오면 잘 설치가 됨 </p>
         <p> cmd창 &gt; npm -v 입력 &gt; 버전이 나오면 잘 설치가 됨 </p>
-        <p>package.json : 데이터베이스에 있는 언어를 문서로 작성해 놓은 파일 , nodejs를 실행하기전에 필요한 파일을 받거나 설정된 문서 파일</p>
+        <p>
+          package.json : 데이터베이스에 있는 언어를 문서로 작성해 놓은 파일 , nodejs를 실행하기전에 필요한 파일을 받거나
+          설정된 문서 파일
+        </p>
       </div>
       <br /> <p className="stitle"> (3) Nodejs 시작하기 </p>
       <div className="content_container">
@@ -209,7 +212,7 @@ const Nodejs1 = () => {
         <p> console.dir(req.headre) : 객체를 그대로 출력함 </p>
         <p> req.header('User-Agent') : 유저의 OS정보를 출력가능 </p>
         <p> const 변수명 = req.query.name명; : get방식일 때 사용</p>
-        <p>const 변수명 = req.body.name명; : post방식일 때 사용(body-parser 파라미터 확인시 모듈 필요)</p>
+        <p> const 변수명 = req.body.name명; : post방식일 때 사용(body-parser 파라미터 확인시 모듈 필요)</p>
         <p></p>
 
         <CopyButton
@@ -272,23 +275,95 @@ app.listen(port, () => {
         <a href="https://www.postman.com/downloads/" target="_blank">
           postman 설치 👈
         </a>
-        <p> Postman 회원가입 하고 로그인 하기</p>
-        <p> </p>
+        <p> 1. Postman 회원가입 하고 로그인 하기</p>
+        <p> 2. Postman 워크스페이스 하나 만들기</p>
+        <p> 3. 만든 워크스페이스 들어가서 + 버튼 눌러서 Post방식을 사용할 수 있는 창 보이게 하기</p>
         <p>
-          bodyParser.urlencoded() : 중첩된 객체표현을 허용할지 여부(qs,query-string 2가지URL파싱방식에서 겹치는 객체가 존재하므로 qs를 막음
-          extended:false로 사용)
+          bodyParser.urlencoded() : 중첩된 객체표현을 허용할지 여부(qs,query-string 2가지URL파싱방식에서 겹치는 객체가
+          존재하므로 qs를 막음 extended:false로 사용)
         </p>
-        <p> </p>
-        <p> </p>
-        <p> </p>
-        <p> </p>
-        <CopyButton text="" content=""></CopyButton>
-        <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_11_", "0", ".png"])}></ImageSlider>
+        <CopyButton
+          text='const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use((req, res) => {
+  const userid = req.body.userid;
+  const userpw = req.body.userpw;
+  console.log(`userid:${userid}, userpw:${userpw}`);
+
+  res.writeHead(200, {
+    "content-type": "text/html;charset=utf-8",
+  });
+  res.write("<h2> </h2>");
+  res.write(`<p> 아이디: ${userid}`);
+  res.write(`<p> 패스워드: ${userpw}`);
+  res.end();
+});
+
+app.listen(port, () => {
+  console.log(`${port} 포트로 서버 실행중 ...`);
+});'
+          content="(1) express모듈 post코드 복사"></CopyButton>
+        {/* <CopyButton text="" content=""> </CopyButton>  */}
+        <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_11_", "7", ".png"])}></ImageSlider>
       </div>
+      <br /> <p className="stitle"> 12) 라우터 사용 </p>
+      <div className="content_container">
+        <p> Router객체 </p>
+        <p> 코드에 에러페이지를 추가해서 이미지와 다를 수 있음</p>
+        <p> const 라우터객체 = express.Router();</p>
+        <p> 라우터객체.route('/경로').get(함수);</p>
+        <p> 라우터객체.route('/경로').post(함수);</p>
+      </div>
+      <CopyButton
+        text='const express = require("express");
+          const bodyParser = require("body-parser");
+          const { Router } = require("express");
+          const app = express();
+          const port = 3000;
+          const router = express.Router();
+          
+          app.use(bodyParser.urlencoded({ extended: false }));
+          router.route("/member/login").post((req, res) => {
+            console.log("/member/login 호출!");
+          });
+          app.all("*", (req, res) => {
+            res.status(404).send("<h2>페이지가 없습니다.</h2>");
+          });
+          app.use("/", router);
+          app.listen(port, () => {
+            console.log(`${port} 포트로 서버 실행중 ...`);
+          });'
+        content="(8) 라우터사용 코드 복사"></CopyButton>
+      <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_12_", "4", ".png"])}></ImageSlider>
+      <br /> <p className="stitle"> 13) 템플릿 엔진 </p>
+      <div className="content_container">
+        <p> View를 구현하는 엔진 </p>
+        <p> EJS(Embedded JavaScript) 모듈 </p>
+        <p> 특정 형식 파일로 HTML 페이지를 생성하는 모듈 </p>
+        <p> EJS의 특수 코드를 이용하여 JSP와 같은것 같은데.. 약간의 차이</p>
+        <p>
+          &lt;% 코드 %&gt; &nlt;%= 변수 %&gt;(출력) &lt;%-변수 %&gt;(ejs파일 전체를 전달) render() : 메소드의 매개변수에
+          전달하려는 데이터 입력 ejs.render(data);
+        </p>
+      </div>
+      <CopyButton text="" content=""></CopyButton>
+      <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_13_", "4", ".png"])}></ImageSlider>
       {/* <br/> <p className="stitle"> 3) Nodejs </p> */}
       {/* div.content_container>(p>{$. })* */}
       {/* <CopyButton text="" content=""> </CopyButton>  */}
-      {/* <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_4_", "8", ".png"])}  ></ImageSlider> */}
+      {/* <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_4_", "0", ".png"])}  ></ImageSlider> */}
+      {/* <br/> <p className="stitle"> 3) Nodejs </p> */}
+      {/* div.content_container>(p>{$. })* */}
+      {/* <CopyButton text="" content=""> </CopyButton>  */}
+      {/* <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_4_", "0", ".png"])}  ></ImageSlider> */}
+      {/* <br/> <p className="stitle"> 3) Nodejs </p> */}
+      {/* div.content_container>(p>{$. })* */}
+      {/* <CopyButton text="" content=""> </CopyButton>  */}
+      {/* <ImageSlider image={(arr = ["/img/nodejs1/nodejs1_4_", "0", ".png"])}  ></ImageSlider> */}
     </div>
   )
 }

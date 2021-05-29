@@ -14,35 +14,41 @@ const Jsp1 = () => {
       <p className="stitle"> (1) JSP란? </p>
       <div className="content_container">
         <p>
-          자바에서 HTML,JavaScript를 사용할 수 있게 해주는 프레임워크 Servlet에서 더 향상된 프레임워크로 기반은 Servlet이고, Servlet보다
-          Html,JavaScript를 좀더 사용자는 편하게 사용할 수 있다는 장점이 있다.
+          자바에서 HTML,JavaScript를 사용할 수 있게 해주는 프레임워크 Servlet에서 더 향상된 프레임워크로 기반은
+          Servlet이고, Servlet보다 Html,JavaScript를 좀더 사용자는 편하게 사용할 수 있다는 장점이 있다.
         </p>
         <p> 그렇다면 왜 JSP가 탄생했을까? 웹에 처음으로 돌아가서 단계별로 설명하겠다. </p>
         <p>
-          (1) 초창기의 웹은 HTML,CSS문서와 같이 움직이지 않는 정적인 페이지만을 처리하였다. 그래서 동적인 움직이는 페이지를 사용자는 원하게 되었고
+          (1) 초창기의 웹은 HTML,CSS문서와 같이 움직이지 않는 정적인 페이지만을 처리하였다. 그래서 동적인 움직이는
+          페이지를 사용자는 원하게 되었고
         </p>
         <p>
-          (2) 자바스크립트와 같이 동적인 페이지를 만들 수 있게 되었다. 하지만 문제가 있었다. 그떄 당시에는 동적인 페이지를 서버가 처리를 하고
-          클라이언트에게 보내는 것이 아니라 통쨰로 클라이언트에게 보내고 클라이언트는 그떄 당시에는 거대한 용량을 스스로 처리해야 하는 부담이 생겼다.
-          그렇다고 서버가 데이터베이스와 결과를 처리를 해서 보내기에는또 부담이 크기 때문에 이 또한 불가능 하였다.
+          (2) 자바스크립트와 같이 동적인 페이지를 만들 수 있게 되었다. 하지만 문제가 있었다. 그떄 당시에는 동적인
+          페이지를 서버가 처리를 하고 클라이언트에게 보내는 것이 아니라 통쨰로 클라이언트에게 보내고 클라이언트는 그떄
+          당시에는 거대한 용량을 스스로 처리해야 하는 부담이 생겼다. 그렇다고 서버가 데이터베이스와 결과를 처리를 해서
+          보내기에는또 부담이 크기 때문에 이 또한 불가능 하였다.
         </p>
         <p>
-          (3) 이렇기 떄문에 클라이언트와 데이터베이스(서버) 중간에 미들웨어(서버)라는 존재가 탄생하였다. 중간에서 클라이언트의 요청과 데이터베이스에서
-          결과를 받고 처리를 해서 클라이언트에게 넘겨주는 방식이 생겨나게 되었다.
+          (3) 이렇기 떄문에 클라이언트와 데이터베이스(서버) 중간에 미들웨어(서버)라는 존재가 탄생하였다. 중간에서
+          클라이언트의 요청과 데이터베이스에서 결과를 받고 처리를 해서 클라이언트에게 넘겨주는 방식이 생겨나게 되었다.
         </p>
         <p>
-          (4) 미들웨어가 존재해서 편해졌는데 시대가 발전하고 처리할 요구가 많아지자 정적데이터와 동적데이터를 처리하는 미들웨어 2개로 나뉘게 되었다.
-          이 때 동적데이터를 처리하는 서버를 WAS라 부르고 아파치톰캣이 이와 같은 역할을 하는 것이다.
+          (4) 미들웨어가 존재해서 편해졌는데 시대가 발전하고 처리할 요구가 많아지자 정적데이터와 동적데이터를 처리하는
+          미들웨어 2개로 나뉘게 되었다. 이 때 동적데이터를 처리하는 서버를 WAS라 부르고 아파치톰캣이 이와 같은 역할을
+          하는 것이다.
         </p>
         <p>
-          (5) 과거에는 WAS는 정적인 데이터를 처리하는 웹서버 역할을 하지 않았지만 지금은 WAS가 처리는 가능하지만 웹서버와 동시에 운영을 한다(WAS에
-          문제가 발생하여도 안정적인 서버운영이 가능하기 떄문)
+          (5) 과거에는 WAS는 정적인 데이터를 처리하는 웹서버 역할을 하지 않았지만 지금은 WAS가 처리는 가능하지만
+          웹서버와 동시에 운영을 한다(WAS에 문제가 발생하여도 안정적인 서버운영이 가능하기 떄문)
         </p>
         <p>
-          (6) Servlet은 자바기반으로 WAS에서 작동한다. 하지만 Servlet은 HTML 코드와 함께 작성하려면 코드작성이 불편하다 그러므로 좀더 쉽게 코드를
-          작성하기 위해 JSP가 만들어졌다.
+          (6) Servlet은 자바기반으로 WAS에서 작동한다. 하지만 Servlet은 HTML 코드와 함께 작성하려면 코드작성이 불편하다
+          그러므로 좀더 쉽게 코드를 작성하기 위해 JSP가 만들어졌다.
         </p>
-        <p>(7) 클라이언트가 JSP로 요청을 하면 Servlet코드로 변경이되고(아파치톰캣의 역할) 처리결과를 HTML파일로 클라이언트에게 제공한다.</p>
+        <p>
+          (7) 클라이언트가 JSP로 요청을 하면 Servlet코드로 변경이되고(아파치톰캣의 역할) 처리결과를 HTML파일로
+          클라이언트에게 제공한다.
+        </p>
       </div>
       <br /> <p className="stitle"> (2) JSP 이클립스에서 설정하기 </p>
       <div className="content_container">
@@ -172,7 +178,11 @@ public class Test2 {
         </a>
         <p>✔ 코드를 복사하고 Ctrl+Shift+F 를 하면 이클립스에서 코드가 정리됩니다.</p>
         <p>✔ 기본 포트번호가 3306이지만 MySQL Workbench 홈에서 각자 포트번호 한번 보시기 바랍니다. </p>
-        <p> (18번 이후) cmd창으로 보는 방법 : cmd창 ➡ mysql -u root -p1234 입력➡ show databases 입력, 만들어둔 sqltestdb 확인 </p>
+        <p>
+          {" "}
+          (18번 이후) cmd창으로 보는 방법 : cmd창 ➡ mysql -u root -p1234 입력➡ show databases 입력, 만들어둔 sqltestdb
+          확인{" "}
+        </p>
         <p> ➡ use sqltestdb 입력 ➡ show tables; 입력, 테이블 확인하는 방법 </p>
         <p> ➡ select * from test; 입력, 테이블의 레코드를 보는 sql문 </p>
         <p> ➡ exit 입력 혹은 그냥 종료해도 상관없음 </p> <br />
@@ -227,9 +237,18 @@ public class Test1 {
         <p>✔ Ctrl + Shift + O 하면 import가 자동으로 된다.</p>
         <p>✔ Servlet은 생명주기가 존재한다. Init() - Service() - Destroy() </p>
         <p>✔ Servlet 공간에 Servlet 객체는 한개만 존재하고 똑같은 객체는 만들지 않는다. </p>
-        <p>1. 사용자가 처음으로 요청을 하면 init()과 service() 메소드를 실행한다. - 메모리에 객체가 없으므로 생성하고 service() 실행</p>
-        <p>2. 사용자가 다시 요청을 하면 service() 메소드만 실행을 한다 - 이미 객체가 메모리상에 올라가 있으므로 새롭게 생성하지 않음</p>
-        <p>3. 사용자가 servlet 코드를 수정을 하고 저장을 하면 destroy()가 실행이 된다. - 다른 객체가 되었으므로 기존에 있던 객체를 삭제</p>
+        <p>
+          1. 사용자가 처음으로 요청을 하면 init()과 service() 메소드를 실행한다. - 메모리에 객체가 없으므로 생성하고
+          service() 실행
+        </p>
+        <p>
+          2. 사용자가 다시 요청을 하면 service() 메소드만 실행을 한다 - 이미 객체가 메모리상에 올라가 있으므로 새롭게
+          생성하지 않음
+        </p>
+        <p>
+          3. 사용자가 servlet 코드를 수정을 하고 저장을 하면 destroy()가 실행이 된다. - 다른 객체가 되었으므로 기존에
+          있던 객체를 삭제
+        </p>
         {/* 생명주기 설명 필요 */}
         <CopyButton
           text='package day2;
@@ -270,9 +289,14 @@ public class Test3 extends HttpServlet {
       <br /> <p className="stitle"> (7) JSP파일 실행해보기 </p>
       <div className="content_container">
         <p> JSP는 HTML과 달리 &gt;%@ %&lt; 기호를 이용한다.</p>
-        <p>만약에 작동이 잘 되지 않는다면 기존에 사용된 서버를 종료하고 다시 연결하기 , 그리고 ctrl + s 저장하기 누르기!! JSP는 저장 안되면 실행x</p>
+        <p>
+          만약에 작동이 잘 되지 않는다면 기존에 사용된 서버를 종료하고 다시 연결하기 , 그리고 ctrl + s 저장하기 누르기!!
+          JSP는 저장 안되면 실행x
+        </p>
         <p>개인마다 다르지만 아래의 경로를 따라가면 jsp파일이 java파일(Servlet)로 변한것을 볼 수 있다. </p>
-        <p>이클립스폴더\.metadata\.plugins\org.eclipse.wst.server.core \tmp0\work\Catalina\localhost\day2\org\apache\jsp </p>
+        <p>
+          이클립스폴더\.metadata\.plugins\org.eclipse.wst.server.core \tmp0\work\Catalina\localhost\day2\org\apache\jsp{" "}
+        </p>
         <CopyButton
           text='<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -292,6 +316,7 @@ public class Test3 extends HttpServlet {
       <br /> <p className="stitle"> (8) JSP 코드 작성 및 문법이해 </p>
       <div className="content_container">
         <p> JSP문법</p>
+        <p> 자바 파일 클래스 변수를 불러옴 : &lt;%@ %&gt; </p>
         <p> 선언문(Declaration) : &lt;%! %&gt; , (메서드,변수 등)선언 태그 </p>
         <p> 표현식(Experssion) : &lt;%= %&gt; , 화면에 출력할 때 사용, 메소드 호출</p>
         <p> 스크립트릿(Scriptlet) : &lt;% %&gt; , 끊어서도 사용 가능, 일반적인 코드 작성</p>
@@ -299,19 +324,31 @@ public class Test3 extends HttpServlet {
         <p> JSP주석 : &lt;%-- --%&gt; </p>
         <p> Java주석 : // , /**/ </p>
         <br />
-        <p> &lt;%@ include file=".jsp" %&gt; 다른 파일(만들어둔 JSP,HTMl) 한번에 불러오기 - 스프링프레임워크가 있어 사용거의안함</p>
         <p>
-          &lt;jsp:include page=".jsp" &gt; &lt;/jsp:include&gt; , include 액션(위에 다른 파일을 불러오는 include와는 다름) include 액션 실행시점에
-          해당파일 호출하고 컴파일 , 파라미터 등 요청전달에 사용 ,다른 페이지로 이동했다가 다시 돌아옴
+          {" "}
+          &lt;%@ include file=".jsp" %&gt; 다른 파일(만들어둔 JSP,HTMl) 한번에 불러오기 - 스프링프레임워크가 있어
+          사용거의안함
+        </p>
+        <p>
+          &lt;jsp:include page=".jsp" &gt; &lt;/jsp:include&gt; , include 액션(위에 다른 파일을 불러오는 include와는
+          다름) include 액션 실행시점에 해당파일 호출하고 컴파일 , 파라미터 등 요청전달에 사용 ,다른 페이지로 이동했다가
+          다시 돌아옴
         </p>
         <p> &lt;jsp:param name="" value="" @등="" %&gt; key-value 으로 파라미터를 보냄 </p>
         <p> &lt;%= request.getParameter("num1") %&gt; 으로 파라미터를 받아옴 </p>
-        <p> &lt;jsp:forward page=".jsp" &gt; &lt;/jsp:forward&gt; 파라미터 등 요청전달에 사용, 다른 페이지로 이동해버림(include액션과 다름) </p>
+        <p>
+          {" "}
+          &lt;jsp:forward page=".jsp" &gt; &lt;/jsp:forward&gt; 파라미터 등 요청전달에 사용, 다른 페이지로
+          이동해버림(include액션과 다름){" "}
+        </p>
         {/* <p> &lt;%@ isErrorPage="true" %&gt; 에러가 났을때 발생하는 페이지 </p> */}
         {/* <p> &lt;%@ errorPage=".jsp" %&gt; 에러가 났을때 발생하는 이동되는 페이지 </p>*/}
         <br />
         <p> JSP 내장객체 </p>
-        <p>request, resposne, pageContext, session, application, page, out, config _jspx_out, _jspx_page_context</p>
+        <p>
+          request, resposne, pageContext(페이지 범위 내에서 사용하는 객체), session, application, page, out, config
+          _jspx_out, _jspx_page_context
+        </p>
         <p> HTML에서 파라미터 받아오는 법: request.getParameter("name값"); </p>
         <p> 요청한 받은값 인코딩: request.setCharacterEncoding("UTF-8");</p>
         <p> 요청한 받은값 인코딩: request.getParameterValues("배열일떄");</p>
@@ -452,15 +489,21 @@ charset=UTF-8"
       <div className="content_container">
         <p> 자바Bean은 자바로 작성된 소프트웨어 컴포넌트 </p>
         <p>
-          그렇다면 컴포넌트란 무엇인가? 컴포넌트라는 개념은 리액트에서도 볼 수 있는데 간단하게 말하자면 가져다가 쓰면 바로 사용이 가능하게 만드는
-          것이다. 클래스 처럼 변수,메소드 등을 가져오는것이 아니라 그냥 그 짜여진 프로그램을 통째로 가져와서 바로 사용할 수 있는것이다. 페이스북은
-          리액트 컴포넌트가 몇천,몇만개로 구성이 되어있다고 한다. 백엔드를 공부하고 싶지만 리액트에서 컴포넌트를 사용하고 그 매력에 빠져서
-          공부중이다라고 한다면 얼마나 좋은지 대답이 될 것 같다.
+          그렇다면 컴포넌트란 무엇인가? 컴포넌트라는 개념은 리액트에서도 볼 수 있는데 간단하게 말하자면 가져다가 쓰면
+          바로 사용이 가능하게 만드는 것이다. 클래스 처럼 변수,메소드 등을 가져오는것이 아니라 그냥 그 짜여진 프로그램을
+          통째로 가져와서 바로 사용할 수 있는것이다. 페이스북은 리액트 컴포넌트가 몇천,몇만개로 구성이 되어있다고 한다.
+          백엔드를 공부하고 싶지만 리액트에서 컴포넌트를 사용하고 그 매력에 빠져서 공부중이다라고 한다면 얼마나 좋은지
+          대답이 될 것 같다.
         </p>
         <p> 웹상에서 자바 변수를 따로 사용하지 않고 한번에 묶어서 클래스 필드(변수)를 사용하게 하는것</p>
         <p> useBean(클래스객체를 생성)</p>
         <p> 선언(범위,공백가능) : &lt; page, &lt; request, &lt; session, &lt; application </p>
         <p> 사용 : &lt;jsp:useBean id="a" type="A" class="B" scope=""&gt; //A a = new B()</p>
+        <p>
+          {" "}
+          아래 property="*"의 의미는 a클래스에 있는 변수의 이름이 request로 받은 프로퍼티와 값이 같다면, a클래스의 변수
+          = 프로퍼티 값을 대입을 하겠다는 뜻이다.{" "}
+        </p>
         <p> &lt;jsp:setProperty name="a" property="값,*" value="값"&gt; </p>
         <p> &lt;jsp:setProperty name="a" property="값,*" param=페이지의파라미터"&gt; </p>
         <p> &lt;jsp:setProperty name="a" property="값,*" &gt; </p>
@@ -517,12 +560,19 @@ public class Test4 {
         {/* <CopyButton text='' content=""> </CopyButton>*/}
         <ImageSlider image={(arr = ["/img/jsp2/jsp2_9_", "3", ".png"])}> </ImageSlider> <br />
       </div>
-      <br /> <p className="stitle"> (10) JSTL , EL</p>
+      <br /> <p className="stitle"> (10) EL, JSTL</p>
       <div className="content_container">
-        <p>1. </p>
-        <p>2. </p>
-        <p>3. </p>
-        <p>4. </p>
+        <p> EL(Expression Language) : 서블릿 내장 객체에서 사용하는 것보다 더 간단하게 출력가능</p>
+        <p> request.getAttribute("이름") 👉 ${이름} </p>
+        <p> ((List)request.getAttribute("배열이름")).get(0) 👉 ${이름[숫자]} </p>
+        <p> ((Map)request.getAttribute("Map이름")).get("키값") 👉 ${Map이름.키값} </p>
+        <p> (page,request,session,application + scope) 각 영역의 생명주기에 사용되는 저장소 </p>
+        <p> param : 파라미터값 저장소 , paramValues : 배열파라미터값 저장소 , header,headerValues : 헤더값 저장소 </p>
+        <p> cookie : 쿠키 정보를 저장하고 있는 저장소 , initParam : 컨텍스트 초기화 파라미터 저장하고 있는 저장소 </p>
+        <p> pageContext : 페이지 범위의 컨텍스트 저장소 </p>
+        <p> ${한정사(page, request, session, application + scope)} </p>
+        <p> 연산자 : &lt;(lt), &gt;(gt) &lt;=(le) &gt;=(ge) ==(eq) !=(ne) &amp;&amp;(and) ||(or) </p>
+        <p> /(div) , %(mod) null이거나 비었을때(empty,반대not empty)</p>
         {/* <CopyButton text='' content=""> </CopyButton>*/}
         {/* <ImageSlider image={(arr = ["/img/jsp2/jsp2_10_", "0", ".png"])} ></ImageSlider>*/}
       </div>

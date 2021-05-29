@@ -1,6 +1,6 @@
 {
     "tabwidth": 2,
-    "printWidth": 150,
+    "printWidth": 120,
     "jsxBracketSameLine": true,
     "proseWrap": "preserve",
     "semi": false,
