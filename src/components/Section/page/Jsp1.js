@@ -325,7 +325,6 @@ public class Test3 extends HttpServlet {
         <p> Java주석 : // , /**/ </p>
         <br />
         <p>
-          {" "}
           &lt;%@ include file=".jsp" %&gt; 다른 파일(만들어둔 JSP,HTMl) 한번에 불러오기 - 스프링프레임워크가 있어
           사용거의안함
         </p>
@@ -562,8 +561,9 @@ public class Test4 {
       </div>
       <br /> <p className="stitle"> (10) EL, JSTL</p>
       <div className="content_container">
-        <p> EL(Expression Language) : 서블릿 내장 객체에서 사용하는 것보다 더 간단하게 출력가능</p>
+        <p> EL(Expression Language) , 스크립트 언어(자바언어x)</p>
         <p> request.getAttribute("이름") 👉 ${이름} </p>
+        <p> ${(Map, Beans, 배열, 리스트[(키값, 프로퍼티명, 인덱스)])} </p>
         <p> ((List)request.getAttribute("배열이름")).get(0) 👉 ${이름[숫자]} </p>
         <p> ((Map)request.getAttribute("Map이름")).get("키값") 👉 ${Map이름.키값} </p>
         <p> (page,request,session,application + scope) 각 영역의 생명주기에 사용되는 저장소 </p>
@@ -573,6 +573,38 @@ public class Test4 {
         <p> ${한정사(page, request, session, application + scope)} </p>
         <p> 연산자 : &lt;(lt), &gt;(gt) &lt;=(le) &gt;=(ge) ==(eq) !=(ne) &amp;&amp;(and) ||(or) </p>
         <p> /(div) , %(mod) null이거나 비었을때(empty,반대not empty)</p>
+        <br />
+        <p> JSTL (JSP Standara Tag Library) </p>
+        <p> c 태그 라이브러리 : &lt;%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%&gt; </p>
+        <p> fmt 태그 라이브러리 : &lt;%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%&gt; </p>
+        <p> sql 태그 라이브러리 : &lt;%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%&gt; </p>
+        <p> x 태그 라이브러리 : &lt;%@taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x"%&gt; </p>
+        <p> fn 태그 라이브러리 : &lt;%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%&gt; </p>
+        <p> &gt;c:out value="@" default="" /&lt;</p>
+        <p> &gt;c:set var="@" [scope=""] value="@" /&lt;</p>
+        <p> &gt;c:out /&lt;</p>
+        <p> &gt;c:remove var="" scope="" /&lt;</p>
+        <p>
+          &gt;c:forEach var="name" items="${expression}" [varStatus="name"] [begin="exp"] [end="exp"] [step="exp"]/&lt;
+        </p>
+        <p> 반복문 사용 속성 (varstatus.@): corrent, index, count, first, last, begin, end, step</p>
+        <p> &lt;c:if test="expression" [var="name"] [scope="scope"] &gt; &lt;/c:if&gt; </p>
+        <p>
+          if,else 사용 &lt;c:choose&gt; &lt;c:when test="expression"&gt; &lt;/c:when&gt; &lt;c:otherwise&gt;
+          &lt;/c:otherwise&gt; &lt;/c:choose&gt;{" "}
+        </p>
+        <p>
+          &lt;c:url value="/content/search.jsp"&lt; &lt;c:param name="keyword" value="${searchTerm}"/&lt; &lt;c:param
+          name="month" value="02/2003"/&lt; &lt;/c:url&lt;
+        </p>
+        <p>
+          &lt;c:redirect url="expression" context="expression"&gt; &lt;c:param name="expression" value="expression"/&gt;
+          ... &lt;/c:redirect&gt;
+        </p>
+        <p>
+          {" "}
+          <a> http://www.libqa.com/wiki/147 참고 </a>{" "}
+        </p>
         {/* <CopyButton text='' content=""> </CopyButton>*/}
         {/* <ImageSlider image={(arr = ["/img/jsp2/jsp2_10_", "0", ".png"])} ></ImageSlider>*/}
       </div>
