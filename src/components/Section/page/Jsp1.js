@@ -336,9 +336,8 @@ public class Test3 extends HttpServlet {
         <p> &lt;jsp:param name="" value="" @등="" %&gt; key-value 으로 파라미터를 보냄 </p>
         <p> &lt;%= request.getParameter("num1") %&gt; 으로 파라미터를 받아옴 </p>
         <p>
-          {" "}
           &lt;jsp:forward page=".jsp" &gt; &lt;/jsp:forward&gt; 파라미터 등 요청전달에 사용, 다른 페이지로
-          이동해버림(include액션과 다름){" "}
+          이동해버림(include액션과 다름)
         </p>
         {/* <p> &lt;%@ isErrorPage="true" %&gt; 에러가 났을때 발생하는 페이지 </p> */}
         {/* <p> &lt;%@ errorPage=".jsp" %&gt; 에러가 났을때 발생하는 이동되는 페이지 </p>*/}
@@ -499,9 +498,8 @@ charset=UTF-8"
         <p> 선언(범위,공백가능) : &lt; page, &lt; request, &lt; session, &lt; application </p>
         <p> 사용 : &lt;jsp:useBean id="a" type="A" class="B" scope=""&gt; //A a = new B()</p>
         <p>
-          {" "}
           아래 property="*"의 의미는 a클래스에 있는 변수의 이름이 request로 받은 프로퍼티와 값이 같다면, a클래스의 변수
-          = 프로퍼티 값을 대입을 하겠다는 뜻이다.{" "}
+          = 프로퍼티 값을 대입을 하겠다는 뜻이다.
         </p>
         <p> &lt;jsp:setProperty name="a" property="값,*" value="값"&gt; </p>
         <p> &lt;jsp:setProperty name="a" property="값,*" param=페이지의파라미터"&gt; </p>
@@ -561,21 +559,26 @@ public class Test4 {
       </div>
       <br /> <p className="stitle"> (10) EL, JSTL</p>
       <div className="content_container">
-        <p> EL(Expression Language) , 스크립트 언어(자바언어x)</p>
-        <p> request.getAttribute("이름") 👉 ${이름} </p>
-        <p> ${(Map, Beans, 배열, 리스트[(키값, 프로퍼티명, 인덱스)])} </p>
-        <p> ((List)request.getAttribute("배열이름")).get(0) 👉 ${이름[숫자]} </p>
-        <p> ((Map)request.getAttribute("Map이름")).get("키값") 👉 ${Map이름.키값} </p>
+        <p> "EL(Expression Language) , 스크립트 언어(자바언어x)"</p>
+        <p> request.getAttribute("이름") 👉 $ 이름 </p>
+        <p> $ (Map, Beans, 배열, 리스트[(키값, 프로퍼티명, 인덱스)]) </p>
+        <p> ((List)request.getAttribute("배열이름")).get(0) 👉 $ 이름[숫자] </p>
+        <p> ((Map)request.getAttribute("Map이름")).get("키값") 👉 $ Map이름.키값 </p>
         <p> (page,request,session,application + scope) 각 영역의 생명주기에 사용되는 저장소 </p>
         <p> param : 파라미터값 저장소 , paramValues : 배열파라미터값 저장소 , header,headerValues : 헤더값 저장소 </p>
         <p> cookie : 쿠키 정보를 저장하고 있는 저장소 , initParam : 컨텍스트 초기화 파라미터 저장하고 있는 저장소 </p>
         <p> pageContext : 페이지 범위의 컨텍스트 저장소 </p>
-        <p> ${한정사(page, request, session, application + scope)} </p>
+        <p> $ 한정사(page, request, session, application + scope) </p>
         <p> 연산자 : &lt;(lt), &gt;(gt) &lt;=(le) &gt;=(ge) ==(eq) !=(ne) &amp;&amp;(and) ||(or) </p>
         <p> /(div) , %(mod) null이거나 비었을때(empty,반대not empty)</p>
         <br />
         <p> JSTL (JSP Standara Tag Library) </p>
         <p> c 태그 라이브러리 : &lt;%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%&gt; </p>
+        <p> 본인이 정의한 태그를 사용할 경우 uri="/WEB-INF/.." prefix="이름" 으로 사용한다</p>
+        <p>
+          그리고 정의한 곳의 .tag파일에서는 &lt;%@ tag language="java" pageEncoding="UTF-8" body-content="empty" %&gt;
+          &lt;%@ attribute name="이름" %&gt;
+        </p>
         <p> fmt 태그 라이브러리 : &lt;%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%&gt; </p>
         <p> sql 태그 라이브러리 : &lt;%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%&gt; </p>
         <p> x 태그 라이브러리 : &lt;%@taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x"%&gt; </p>
@@ -585,16 +588,16 @@ public class Test4 {
         <p> &gt;c:out /&lt;</p>
         <p> &gt;c:remove var="" scope="" /&lt;</p>
         <p>
-          &gt;c:forEach var="name" items="${expression}" [varStatus="name"] [begin="exp"] [end="exp"] [step="exp"]/&lt;
+          &gt;c:forEach var="name" items="$ expression " [varStatus="name"] [begin="exp"] [end="exp"] [step="exp"]/&lt;
         </p>
         <p> 반복문 사용 속성 (varstatus.@): corrent, index, count, first, last, begin, end, step</p>
         <p> &lt;c:if test="expression" [var="name"] [scope="scope"] &gt; &lt;/c:if&gt; </p>
         <p>
           if,else 사용 &lt;c:choose&gt; &lt;c:when test="expression"&gt; &lt;/c:when&gt; &lt;c:otherwise&gt;
-          &lt;/c:otherwise&gt; &lt;/c:choose&gt;{" "}
+          &lt;/c:otherwise&gt; &lt;/c:choose&gt;
         </p>
         <p>
-          &lt;c:url value="/content/search.jsp"&lt; &lt;c:param name="keyword" value="${searchTerm}"/&lt; &lt;c:param
+          &lt;c:url value="/content/search.jsp"&lt; &lt;c:param name="keyword" value="$ searchTerm "/&lt; &lt;c:param
           name="month" value="02/2003"/&lt; &lt;/c:url&lt;
         </p>
         <p>
@@ -602,8 +605,7 @@ public class Test4 {
           ... &lt;/c:redirect&gt;
         </p>
         <p>
-          {" "}
-          <a> http://www.libqa.com/wiki/147 참고 </a>{" "}
+          <a> http://www.libqa.com/wiki/147 참고 </a>
         </p>
         {/* <CopyButton text='' content=""> </CopyButton>*/}
         {/* <ImageSlider image={(arr = ["/img/jsp2/jsp2_10_", "0", ".png"])} ></ImageSlider>*/}
